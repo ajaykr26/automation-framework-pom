@@ -1,0 +1,6 @@
+[
+  {
+    "seleniumServer": "LOCAL",
+    "browserName": "FIREFOX"
+  }
+]

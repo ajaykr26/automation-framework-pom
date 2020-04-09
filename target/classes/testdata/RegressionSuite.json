@@ -1,0 +1,12 @@
+{
+	"Test001": {
+		"other_url": "http://google.com/",
+		"username": "Test001",
+		"password": "ajay@1526"
+	},
+	"Test002": {
+		"other_url": "http://seleniumhq.com/",
+		"username": "Test002",
+		"password": "ajay@1526578"
+	}
+}

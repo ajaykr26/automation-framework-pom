@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 4, Time elapsed: 5.226 s <<< FAILURE! - in TestSuite
+startUp(automation.testsuite.SmokeSuite)  Time elapsed: 5.092 s  <<< FAILURE!
+java.lang.NullPointerException
+
+startUp(automation.testsuite.SmokeSuite)  Time elapsed: 5.093 s  <<< FAILURE!
+java.lang.NullPointerException
+
