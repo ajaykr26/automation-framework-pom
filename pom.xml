@@ -8,7 +8,7 @@
 
     <properties>
         <jdk>8</jdk>
-        <log4j>2.13.0</log4j>
+        <log4j>2.14.0</log4j>
         <selenium>3.141.59</selenium>
         <testng>7.0.0</testng>
         <htmlunit>2.39.0</htmlunit>
