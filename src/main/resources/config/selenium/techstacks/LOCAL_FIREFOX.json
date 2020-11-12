@@ -1,6 +1,6 @@
-[
-  {
-    "seleniumServer": "LOCAL",
-    "browserName": "FIREFOX"
+{
+  "platform": {
+    "seleniumServer": "local",
+    "browserName": "firefox"
   }
-]
+}

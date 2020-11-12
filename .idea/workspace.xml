@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b2ab7d-dc22-4ab8-8109-60d230546d1d" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="166dbdbd-91ee-4971-98fe-2ef9135607dc" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,59 +10,46 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
+  <component name="ProjectId" id="1anLqByUJtMhLMcaBHhZOzlnZHN" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
   </component>
-  <component name="ProjectId" id="1a7cIN2VGAWzFlredpYA7rNtlNn" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/automation/library/selenium" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/testdata" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.kotlinCompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\resources\config\selenium\properties" />
+      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\resources\config\selenium" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="automation.testsuite" />
-      <recent name="automation.pageobjects" />
-      <recent name="automation.library.reporting" />
-      <recent name="automation.library.common" />
+      <recent name="testscripts" />
+      <recent name="pageobjects" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\java\automation\library\selenium" />
-      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\java\automation\library\reporting" />
-      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\java\automation\library\common" />
+      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\resources\testdata" />
+      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom" />
+      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\resources\testsuites" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="TestNG.C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/testng.xml">
-    <configuration name="Encryptor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="automation.library.common.Encryptor" />
+  <component name="RunManager" selected="TestNG.C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/src/main/resources/testsuites/IRCTCBooking.xml">
+    <configuration name="BasePageObject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="library.selenium.BasePageObject" />
       <module name="automation-framework-pom" />
-      <option name="PROGRAM_PARAMETERS" value="password ajay@1324" />
-      <option name="VM_PARAMETERS" value="-ea -Dcukes.env=UAT -Dcukes.techStack=LOCAL_CHROME -Dorg.apache.logging.log4j.level=DEBUG -Dcukes.selenium.defaultFindRetries=2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="automation.library.common.*" />
+          <option name="PATTERN" value="library.selenium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -71,17 +57,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testscripts.MainTest" />
       <module name="automation-framework-pom" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testscripts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/src/main/resources/testsuites/IRCTCBooking.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation-framework-pom" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testscripts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/main/resources/testsuites/IRCTCBooking.xml" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="SUITE" />
-      <option name="VM_PARAMETERS" value="-ea -Dcukes.env=UAT -Dcukes.techStack=LOCAL_CHROME -Dorg.apache.logging.log4j.level=DEBUG -Dcukes.selenium.defaultFindRetries=2" />
+      <option name="VM_PARAMETERS" value="-ea  -Denvironment=UAT  -DtechStack=LOCAL_CHROME  -Dorg.apache.logging.log4j.level=DEBUG  -Dcukes.selenium.defaultFindRetries=2" />
       <option name="PARAMETERS" value="" />
       <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
       <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
@@ -89,43 +98,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRunner" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation-framework-bdd" />
+    <configuration name="Facebook_Login.Test_001" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation-framework-pom" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="runners.*" />
+          <option name="PATTERN" value="testscripts.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="runners" />
-      <option name="MAIN_CLASS_NAME" value="runners.TestRunner" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea -Dcukes.env=UAT -Dcukes.techStack=LOCAL_CHROME -Dorg.apache.logging.log4j.level=DEBUG -Dcukes.selenium.defaultFindRetries=2" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="SUITE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
+      <option name="PACKAGE_NAME" value="testscripts" />
+      <option name="MAIN_CLASS_NAME" value="testscripts.Facebook_Login" />
+      <option name="METHOD_NAME" value="Test_001" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -133,15 +117,17 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Encryptor" />
-      <item itemvalue="TestNG.C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/testng.xml" />
-      <item itemvalue="TestNG.TestRunner" />
+      <item itemvalue="Application.BasePageObject" />
+      <item itemvalue="Application.MainTest" />
+      <item itemvalue="TestNG.C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/src/main/resources/testsuites/IRCTCBooking.xml" />
+      <item itemvalue="TestNG.Facebook_Login.Test_001" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/testng.xml" />
-        <item itemvalue="TestNG.TestRunner" />
-        <item itemvalue="Application.Encryptor" />
+        <item itemvalue="TestNG.C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/src/main/resources/testsuites/IRCTCBooking.xml" />
+        <item itemvalue="TestNG.Facebook_Login.Test_001" />
+        <item itemvalue="Application.MainTest" />
+        <item itemvalue="Application.BasePageObject" />
       </list>
     </recent_temporary>
   </component>
@@ -150,66 +136,140 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b3b2ab7d-dc22-4ab8-8109-60d230546d1d" name="Default Changelist" comment="" />
-      <created>1586089993923</created>
+      <changelist id="166dbdbd-91ee-4971-98fe-2ef9135607dc" name="Default Changelist" comment="" />
+      <created>1587366599689</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1586089993923</updated>
+      <updated>1587366599689</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="4" key="#Plugins" timestamp="1599210238871">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="4" key="#Plugins/0.0.1366.728@0.0.1366.728" timestamp="1599210238871" />
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601964585125">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601964585125" />
+    <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598593153309">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1598593153309" />
+    <state x="272" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601904670969">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="272" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1601904670969" />
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597677287957">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1597677287957" />
+    <state x="257" y="133" width="988" height="595" key="#xdebugger.evaluate" timestamp="1602058347084">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="257" y="133" width="988" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1602058347084" />
+    <state x="463" y="81" key="FileChooserDialogImpl" timestamp="1602164351184">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="81" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602164351184" />
+    <state width="1323" height="309" key="GridCell.Tab.0.bottom" timestamp="1602164358488">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="309" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602164358488" />
+    <state width="1323" height="309" key="GridCell.Tab.0.center" timestamp="1602164358488">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="309" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602164358488" />
+    <state width="1323" height="309" key="GridCell.Tab.0.left" timestamp="1602164358473">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="309" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602164358473" />
+    <state width="1323" height="309" key="GridCell.Tab.0.right" timestamp="1602164358488">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="309" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602164358488" />
+    <state width="1323" height="230" key="GridCell.Tab.1.bottom" timestamp="1602059468671">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="230" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602059468666" />
+    <state width="1323" height="230" key="GridCell.Tab.1.center" timestamp="1602059468666">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="230" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1602059468666" />
+    <state width="1323" height="230" key="GridCell.Tab.1.left" timestamp="1602059468666">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="230" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1602059468666" />
+    <state width="1323" height="230" key="GridCell.Tab.1.right" timestamp="1602059468666">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="230" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1602059468666" />
+    <state x="213" y="18" key="Maven.ArtifactSearchDialog" timestamp="1597829952737">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="213" y="18" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1597829952737" />
+    <state x="184" y="8" key="SettingsEditor" timestamp="1599215056571">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1599215056571" />
+    <state width="451" height="332" key="XDebugger.FullValuePopup" timestamp="1601533010152">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="451" height="332" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1601533010152" />
+    <state x="447" y="32" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601960978798">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="447" y="32" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1601960978798" />
+    <state x="248" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1597807963904">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="248" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1597807963904" />
+    <state x="274" y="0" key="new project wizard" timestamp="1602935706082">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="274" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1602935706082" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1601957579861">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1601957579861" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1601977678554">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1601977678554" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/automation/library/reporting/ExtentReporter.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/src/main/java/pageobjects/Facebook_SearchPage.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../automation-framework-bdd/src/main/java/library/selenium/common/CommonMethods.java</url>
-          <line>172</line>
-          <option name="timeStamp" value="67" />
+          <url>file://$PROJECT_DIR$/../automation-framework-bdd/src/test/java/library/cucumber/core/runner/AutoEngFormatter.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/automation/testsuite/SmokeSuite.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="73" />
+          <url>file://$PROJECT_DIR$/../automation-framework-bdd/src/test/java/library/cucumber/core/AutoEngHooks.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/automation/library/selenium/BaseTest.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="74" />
+          <url>file://$PROJECT_DIR$/src/main/java/pageobjects/Facebook_HomePage.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/automation/pageobjects/LoginPage.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="85" />
+          <url>file://$PROJECT_DIR$/src/main/java/library/selenium/common/InputMethods.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/automation/library/reporting/ExtentReporter.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/automation/library/reporting/ExtentReporter.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/automation/library/reporting/ExtentReporter.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/automation/testsuite/SmokeSuite.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/automation/testsuite/SmokeSuite.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="92" />
+          <url>file://$PROJECT_DIR$/src/main/java/testscripts/Facebook_Login.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="100" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

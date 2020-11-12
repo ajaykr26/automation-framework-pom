@@ -1,0 +1,28 @@
+package library.common;
+
+public class Constants {
+
+    public static final String ATTRIBUTE_FOR_TABLE_CELL_COMPARE = "fw.attributeForTableCellCompare";
+    public static final String ATTRIBUTE_FOR_TABLE_HEADER_COMPARE = "fw.attributeForTableHeaderCompare";
+    public static final String XPATH_FOR_LABELS = "fw.xPathForLabels";
+    public static final String XPATH_FOR_LABELS_DELIMETER = "--XPATH--";
+    public static final String BASE_PATH = System.getProperty("user.dir") + "/src/main/resources/";
+    public static final String TESTDATA_PATH = BASE_PATH + "testdata/";
+    public static final String DRIVER_PATH = BASE_PATH + "drivers/";
+    public static final String ENVIRONMENT_PATH = BASE_PATH + "config/environments/";
+    public static final String SCREENSHOT_PATH = BASE_PATH + "screenshots/";
+
+    public static final String TESTCASE_XLSX_FILE = BASE_PATH + "/src/main/resources/scripts/testcase.xlsx";
+    public static final String RUNTIME_PROP_FILE = BASE_PATH + "config/selenium/properties/" + "runtime.properties";
+    public static final String KEYBOARD_JSON_FILE = BASE_PATH + "config/keyboard/" + "keyboard.json";
+    public static final String ENVIRONMENT_PROP_FILE = BASE_PATH + "config/environments/" + Property.getVariable("environment") + ".properties";
+    public static final String ENVIRONMENT_SECURE_PROP_FILE = BASE_PATH + "config/environments/SecureText-" + Property.getVariable("environment") + ".properties";
+    public static final String JSON_STACKS_FILE = BASE_PATH + "config/selenium/techstacks/" + Property.getVariable("techStack") + ".json";
+
+    public static String getCurrentEnvFilePath() {
+        String currentEnv = Property.getVariable("environment") != null ? Property.getVariable("environment") :
+                Property.getProperty(RUNTIME_PROP_FILE, "environment").toUpperCase();
+        return BASE_PATH + "config/environments/" + currentEnv + ".properties";
+
+    }
+}
