@@ -7,10 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="automation-framework-pom" />
+        <module name="automation-framework-pom-master" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="automation-framework-bdd" target="8" />
+      <module name="automation-framework-bdd" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
