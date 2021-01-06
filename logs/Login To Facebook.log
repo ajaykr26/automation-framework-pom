@@ -1,28 +1,28 @@
-16:05:754 [main] INFO : testscripts.Facebook_Login - Reading configuration from runtime.properties file
-16:37:282 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
-16:37:407 [main] INFO : library.selenium.BasePO - application http://facebook.com launched in new window
-16:37:407 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
-16:25:835 [main] INFO : library.reporting.ExtentReporter - Directory: C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\extent-report\Facebook_Login\2021.01.06.16.24.32\screenshots\Login To Facebook is created!
-16:27:609 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
-16:28:259 [main] INFO : library.selenium.BasePO - element by 'By.xpath: //a[@data-testid='open-registration-form-button']' located successfully
-16:28:259 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
-16:28:954 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
-16:34:210 [main] INFO : library.selenium.BasePO - element by 'By.name: firstname' located successfully
-16:34:210 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
-16:34:224 [main] INFO : library.selenium.BasePO - returning the value as it is provided in the steps
-16:35:291 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
-16:35:390 [main] INFO : library.selenium.BasePO - element by 'By.name: lastname' located successfully
-16:35:391 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
-16:35:413 [main] INFO : library.selenium.BasePO - returning the value as it is provided in the steps
-16:35:633 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
-16:35:713 [main] INFO : library.selenium.BasePO - element by 'By.name: reg_email__' located successfully
-16:35:714 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
-16:35:727 [main] INFO : library.selenium.BasePO - returning the value as it is provided in the steps
-16:35:808 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
-16:35:832 [main] INFO : library.selenium.BasePO - element by 'By.id: password_step_input' located successfully
-16:35:832 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
-16:35:854 [main] INFO : library.selenium.BasePO - returning the value of PASSWORD from data dictionary
-16:36:270 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
-16:37:880 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
-16:37:998 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
-16:38:121 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
+17:10:837 [main] INFO : testscripts.Facebook_Login - Reading configuration from runtime.properties file
+17:38:549 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
+17:38:659 [main] INFO : library.selenium.BasePO - application http://facebook.com launched in new window
+17:38:659 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
+17:58:885 [main] INFO : library.reporting.ExtentReporter - Directory: C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\extent-report\Facebook_Login\2021.01.06.17.24.06\screenshots\Login To Facebook is created!
+17:19:485 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
+17:22:820 [main] INFO : library.selenium.BasePO - element by 'By.xpath: //a[@data-testid='open-registration-form-button']' located successfully
+17:22:836 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
+17:24:597 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
+17:36:003 [main] INFO : library.selenium.BasePO - element by 'By.name: firstname' located successfully
+17:36:004 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
+17:36:020 [main] INFO : library.selenium.BasePO - returning the value as it is provided in the steps
+17:40:978 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
+17:41:015 [main] INFO : library.selenium.BasePO - element by 'By.name: lastname' located successfully
+17:41:016 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
+17:41:031 [main] INFO : library.selenium.BasePO - returning the value as it is provided in the steps
+17:41:121 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
+17:41:157 [main] INFO : library.selenium.BasePO - element by 'By.name: reg_email__' located successfully
+17:41:158 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
+17:41:174 [main] INFO : library.selenium.BasePO - returning the value as it is provided in the steps
+17:41:243 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
+17:41:280 [main] INFO : library.selenium.BasePO - element by 'By.id: password_step_input' located successfully
+17:41:280 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread
+17:41:298 [main] INFO : library.selenium.BasePO - returning the value of PASSWORD from data dictionary
+17:41:991 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
+17:42:884 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
+17:42:980 [main] DEBUG: library.selenium.BasePO - obtaining the wait for current thread
+17:43:093 [main] DEBUG: library.selenium.BasePO - obtaining the driver for current thread

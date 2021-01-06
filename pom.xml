@@ -21,7 +21,7 @@
         <aspectj>1.8.10</aspectj>
         <maven-compiler-plugin>3.8.0</maven-compiler-plugin>
         <maven-surefire-plugin>2.22.2</maven-surefire-plugin>
-        <suiteXmlFile>IRCTCBooking</suiteXmlFile>
+        <suiteXmlFile>SmokeSuite</suiteXmlFile>
     </properties>
 
     <dependencies>
