@@ -26,7 +26,7 @@ public class FileHelper {
             JSONObject jsonObject = (JSONObject) (key.length > 0 ? new JSONObject(token).get(key[0]) : new JSONObject(token));
             return jsonObject;
         } catch (FileNotFoundException e) {
-//            logger.error(e);
+            logger.error(e);
             return null;
         }
     }

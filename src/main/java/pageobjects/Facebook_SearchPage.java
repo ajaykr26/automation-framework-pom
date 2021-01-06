@@ -1,6 +1,7 @@
 package pageobjects;
 
 import library.selenium.BasePO;
+import library.selenium.FactoryMethod;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -61,7 +62,7 @@ public class Facebook_SearchPage extends BasePO {
             getElement(addPassenger).click();
         getElement(By.xpath("(//input[@formcontrolname='passengerName'])[" + passengerNumber + "]")).sendKeys(parseText("PASSENGER NAME " + passengerNumber));
         getElement(By.xpath("(//input[@formcontrolname='passengerAge'])[" + passengerNumber + "]")).sendKeys(parseText("PASSENGER AGE " + passengerNumber));
-        inputMethodsObj.selectOptionFromDropdown("text", parseText("PASSENGER GENDER " + passengerNumber), getObject("(//select[@formcontrolname='passengerGender'])[" + passengerNumber + "]"));
+        FactoryMethod.getInputMethods().selectOptionFromDropdown("text", parseText("PASSENGER GENDER " + passengerNumber), getObject("(//select[@formcontrolname='passengerGender'])[" + passengerNumber + "]"));
     }
 
     public void fillOtherDetails() {
@@ -70,8 +71,8 @@ public class Facebook_SearchPage extends BasePO {
         getElement(address1).sendKeys(parseText("ADDRESS 1"));
         getElement(pincode).sendKeys(parseText("PINCODE"));
         waitForDropDownValueToLoad(city);
-        inputMethodsObj.selectOptionFromDropdown("text", parseText("CITY"), city);
-        inputMethodsObj.selectOptionFromDropdown("text", parseText("POST OFFICE"), postOffice);
+        FactoryMethod.getInputMethods().selectOptionFromDropdown("text", parseText("CITY"), city);
+        FactoryMethod.getInputMethods().selectOptionFromDropdown("text", parseText("POST OFFICE"), postOffice);
         getElement(upi).click();
         getElement(continueBtn).click();
         if (isAvailable()) {

@@ -1,8 +1,6 @@
 package library.selenium.driver.factory;
 
 import library.common.TestContext;
-import library.selenium.driver.factory.DriverContext;
-import library.selenium.driver.factory.DriverManager;
 import library.selenium.driver.managers.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,45 +39,21 @@ public class DriverFactory {
     }
 
     private DriverManager setDriverManager() {
-        Server server = Server.valueOf(DriverContext.getInstance().getTechStack().get("seleniumServer").toLowerCase());
         Browser browser = Browser.valueOf(DriverContext.getInstance().getBrowserName().toLowerCase());
-        switch (server) {
-            case grid:
-                driverManager.set(new GridDriverManager());
+        switch (browser) {
+            case chrome:
+                driverManager.set(new ChromeDriverManager());
                 break;
-            case saucelabs:
-                driverManager.set(new SaucelabsDriverManager());
+            case firefox:
+                driverManager.set(new FirefoxDriverManager());
                 break;
-            case appium:
-                driverManager.set(new AppiumDriverManager());
+            case iexplorer:
+                driverManager.set(new IEDriverManager());
                 break;
-            case browserstack:
-                driverManager.set(new BrowserStackDriverManager());
+            default:
+                driverManager.set(new ChromeDriverManager());
+                logger.debug("starting chrome as default brouser");
                 break;
-            case remote_htmlunit:
-                driverManager.set(new HtmlUnitDriverManager());
-                break;
-            case remote_phantomjs:
-                driverManager.set(new PantomJSDriverManager());
-                break;
-            case local:
-                switch (browser) {
-                    case chrome:
-                        driverManager.set(new ChromeDriverManager());
-                        break;
-                    case firefox:
-                        driverManager.set(new FirefoxDriverManager());
-                        break;
-                    case iexplorer:
-                        driverManager.set(new IEDriverManager());
-                        break;
-                    case safari:
-                        driverManager.set(new SafariDriverManager());
-                        break;
-                    case edge:
-                        driverManager.set(new EdgeDriverManager());
-                        break;
-                }
         }
 
         return driverManager.get();
@@ -88,10 +62,6 @@ public class DriverFactory {
     public void quit() {
         driverManager.get().quitDriver();
         driverManager.remove();
-    }
-
-    public enum Server {
-        local, grid, saucelabs, appium, browserstack, remote_htmlunit, remote_phantomjs;
     }
 
     public enum Browser {

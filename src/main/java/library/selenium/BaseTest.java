@@ -38,20 +38,9 @@ public class BaseTest {
     private Map<String, String> getTechStack() {
         Map<String, String> techStack = new HashMap<>();
 
-        if (Property.getVariable("techStack") != null) {
-            techStack = FileHelper.getJSONObjectToMap(Constants.JSON_STACKS_FILE, "platform");
-            if (techStack.isEmpty()) {
-                logger.warn("Tech stack JSON file not found: {}. defaulting to local chrome driver instance.", Constants.JSON_STACKS_FILE);
-                techStack.put("seleniumServer", "local");
-                techStack.put("browserName", "chrome");
-            }
-            return techStack;
-        } else {
-            logger.info("techStach is not defined in vm arguments. getting the configuration from runtime.properties file");
-            techStack.put("seleniumServer", Property.getProperty(Constants.RUNTIME_PROP_FILE + "runtime.properties", "seleniumServer").toLowerCase());
-            techStack.put("browserName", Property.getProperty(Constants.RUNTIME_PROP_FILE + "runtime.properties", "browserName").toLowerCase());
-            return techStack;
-        }
+        logger.info("Reading configuration from runtime.properties file");
+        techStack.put("browserName", Property.getProperty(Constants.RUNTIME_PROP_FILE, "browserName").toLowerCase());
+        return techStack;
 
     }
 
@@ -93,8 +82,6 @@ public class BaseTest {
     @AfterSuite
     public void afterSuite() throws MessagingException {
         extentReports.flush();
-        ExtentManager.launchReport(reportPath + "/html-report/index.html");
-        ExtentManager.emailReport(reportPath + "/html-report/index.html");
     }
 
 

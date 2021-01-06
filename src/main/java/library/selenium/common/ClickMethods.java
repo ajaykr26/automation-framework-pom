@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
-public class ClickMethods extends BasePO implements CommonMethods {
+public class ClickMethods extends BasePO {
 
     private WebElement element = null;
 
@@ -16,7 +16,7 @@ public class ClickMethods extends BasePO implements CommonMethods {
         element.click();
     }
 
-    public void clickForcefully(String locatorType, String locator) {
+    public void clickJS(String locatorType, String locator) {
         element = getWait().until(ExpectedConditions.presenceOfElementLocated(getObjectByType(locatorType, locator)));
         JavascriptExecutor executor = (JavascriptExecutor) getDriver();
         executor.executeScript("arguments[0].click();", element);

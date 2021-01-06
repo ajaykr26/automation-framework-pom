@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TableMethods extends BasePO implements CommonMethods {
+public class TableMethods extends BasePO {
 
     public WebElement getMatchingCellElement(String textToFind, String locatorType, String locator) {
         WebElement table = getElementByType(locatorType, locator);

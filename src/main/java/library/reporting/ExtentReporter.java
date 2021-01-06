@@ -3,7 +3,6 @@ package library.reporting;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import library.common.TestContext;
-import library.selenium.driver.factory.DriverContext;
 import library.selenium.driver.factory.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -53,41 +52,36 @@ public class ExtentReporter {
     }
 
     public static void updateReport(String pageName, String methodName, Status status, String message) {
-        if (!DriverContext.getInstance().getTechStack().get("seleniumServer").startsWith("remote")) {
-            try {
-                String screenshotPath = takeScreenshot();
-                switch (status) {
-                    case DEBUG:
-                        ExtentManager.getTest().debug(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-                        break;
-                    case ERROR:
-                        ExtentManager.getTest().error(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-                        break;
-                    case FAIL:
-                        ExtentManager.getTest().fail(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-                        break;
-                    case PASS:
-                        ExtentManager.getTest().pass(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-                        break;
-                    case SKIP:
-                        ExtentManager.getTest().skip(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-                        break;
-                    case INFO:
-                        ExtentManager.getTest().info(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-                        break;
-                    case WARNING:
-                        ExtentManager.getTest().warning(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-                        break;
-                    default:
-                        ExtentManager.getTest().info(pageName + " | " + methodName + " -> " + message);
-                }
-            } catch (Exception exception) {
-                exception.printStackTrace();
+        try {
+            String screenshotPath = takeScreenshot();
+            switch (status) {
+                case DEBUG:
+                    ExtentManager.getTest().debug(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+                    break;
+                case ERROR:
+                    ExtentManager.getTest().error(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+                    break;
+                case FAIL:
+                    ExtentManager.getTest().fail(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+                    break;
+                case PASS:
+                    ExtentManager.getTest().pass(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+                    break;
+                case SKIP:
+                    ExtentManager.getTest().skip(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+                    break;
+                case INFO:
+                    ExtentManager.getTest().info(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+                    break;
+                case WARNING:
+                    ExtentManager.getTest().warning(pageName + " | " + methodName + " -> " + message, MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+                    break;
+                default:
+                    ExtentManager.getTest().info(pageName + " | " + methodName + " -> " + message);
             }
-        } else {
-            logger.info("unable to take screenshot in headless execution");
+        } catch (Exception exception) {
+            exception.printStackTrace();
         }
-
 
     }
 
@@ -122,33 +116,27 @@ public class ExtentReporter {
 
     public static String takeScreenshot() {
         String targetLocation = null;
-
-        if (!DriverContext.getInstance().getTechStack().get("seleniumServer").startsWith("remote")) {
-
-            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-            String fileSeperator = System.getProperty("file.separator");
-            String screenShotName = timeStamp + ".png";
-            try {
-                File file = new File(getScreenshotPath());
-                if (!file.exists()) {
-                    if (file.mkdirs()) {
-                        logger.info("Directory: " + file.getAbsolutePath() + " is created!");
-                    } else {
-                        logger.info("Directory: " + file.getAbsolutePath() + "already exists");
-                    }
-
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        String fileSeperator = System.getProperty("file.separator");
+        String screenShotName = timeStamp + ".png";
+        try {
+            File file = new File(getScreenshotPath());
+            if (!file.exists()) {
+                if (file.mkdirs()) {
+                    logger.info("Directory: " + file.getAbsolutePath() + " is created!");
+                } else {
+                    logger.info("Directory: " + file.getAbsolutePath() + "already exists");
                 }
-                File screenshotFile = ((TakesScreenshot) DriverFactory.getInstance().getDriver()).getScreenshotAs(OutputType.FILE);
-                targetLocation = file + fileSeperator + screenShotName;
-                File targetFile = new File(targetLocation);
-                FileHandler.copy(screenshotFile, targetFile);
-            } catch (FileNotFoundException e) {
-                logger.info("File not found exception occurred while taking screenshot " + e.getMessage());
-            } catch (Exception e) {
-                logger.info("An exception occurred while taking screenshot " + e.getCause());
             }
-        } else logger.info("unable to take screenshot in headless execution");
-
+            File screenshotFile = ((TakesScreenshot) DriverFactory.getInstance().getDriver()).getScreenshotAs(OutputType.FILE);
+            targetLocation = file + fileSeperator + screenShotName;
+            File targetFile = new File(targetLocation);
+            FileHandler.copy(screenshotFile, targetFile);
+        } catch (FileNotFoundException e) {
+            logger.info("File not found exception occurred while taking screenshot " + e.getMessage());
+        } catch (Exception e) {
+            logger.info("An exception occurred while taking screenshot " + e.getCause());
+        }
         return targetLocation;
     }
 

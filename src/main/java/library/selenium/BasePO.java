@@ -2,11 +2,9 @@ package library.selenium;
 
 import com.aventstack.extentreports.Status;
 import library.common.Constants;
-import library.common.Encryptor;
 import library.common.Property;
 import library.common.TestContext;
 import library.reporting.ExtentReporter;
-import library.selenium.common.CommonMethods;
 import library.selenium.driver.factory.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,7 +19,7 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class BasePO implements CommonMethods {
+public class BasePO extends PageFactory {
 
     protected Logger logger = LogManager.getLogger(BasePO.class);
 
@@ -89,19 +87,6 @@ public class BasePO implements CommonMethods {
 
     }
 
-    public String parseSecureText(String encryptedStringKey) {
-        String environment = Property.getVariable("environment") != null ? Property.getVariable("environment") : "UAT";
-        String secureTextFilePath = Constants.ENVIRONMENT_PATH + "SecureText-" + environment + ".properties";
-        String encryptedString = parseText(secureTextFilePath, encryptedStringKey);
-        String decryptedString = null;
-        if (encryptedString != null) {
-            decryptedString = Encryptor.decrypt(encryptedString);
-            return decryptedString;
-        } else {
-            logger.error("entry for key '{}' was not found in the SecureText property file", encryptedStringKey);
-            return null;
-        }
-    }
 
     protected String parseText(String string) {
         String parsedValue = null;
