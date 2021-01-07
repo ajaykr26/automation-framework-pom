@@ -37,11 +37,11 @@ public class ExtentManager {
         ExtentReports extent = new ExtentReports();
         extent.attachReporter(spark);
         spark.config().setCSS("css-string");
+        spark.config().setReportName("automation test report");
         spark.config().setDocumentTitle("automation test report");
         spark.config().setEncoding("utf-8");
         spark.config().setJS("js-string");
         spark.config().setProtocol(Protocol.HTTPS);
-        spark.config().setReportName("build name");
         spark.config().setTheme(Theme.STANDARD);
         spark.config().setTimeStampFormat("MMM dd, yyyy HH:mm:ss");
 

@@ -137,7 +137,7 @@ public class ExtentReporter {
         } catch (Exception e) {
             logger.info("An exception occurred while taking screenshot " + e.getCause());
         }
-        return targetLocation;
+        return ("..\\screenshots"+targetLocation.split("screenshots")[1]).replace("\\", "/");
     }
 
 }
