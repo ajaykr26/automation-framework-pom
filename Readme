@@ -1,0 +1,37 @@
+Framework Includes
+1. Extent reporting
+    updateReport(), addStepLog()
+2. get data from JSON, properties file and fetch directly 
+    parseText(), parseMatchingText(), parseSecureText(), 
+3. Maven
+4. TestNG 
+5. Borwser - htmlunit, chrome, firfox, iexplore
+
+* suitename, testname and description are mandatory to provide in @Test()
+* data set name should be same in the JSON as the testname
+* JSON name for testscripts data should be same as the class name of the testscripts class
+
+browser and environment can be set from **vm arguments:** or **UAT.properties** file
+if environment are not set in any of the above then default setting will be UAT and LOCAL_CHROME.
+**vm arguments:**
+-ea 
+-Denvironment=UAT 
+-DtechStack=LOCAL_CHROME 
+-Dorg.apache.logging.log4j.level=DEBUG 
+-Dcukes.selenium.defaultFindRetries=2
+
+**techStack options:**
+LOCAL_CHROME, LOCAL_IE , LOCAL_FIREFOX , REMOTE_HTMLUNIT_CHROME , REMOTE_HTMLUNIT_FIREFOX, REMOTE_HTMLUNIT_IEXPLORE, 
+environment option: UAT, SIT, STG
+
+* secureText property file key are:
+emailSenderPassword
+applicationUserPassword
+
+* Commanline option to run testscripts suite:
+mvn clean testscripts -Denvironment="UAT" -DtechStack="LOCAL_CHROME" -DsuiteXmlFile=SmokeSuite.xml
+
+* TestRunner.bat file
+1. select environment
+2. select plateform
+3. select testscripts suite

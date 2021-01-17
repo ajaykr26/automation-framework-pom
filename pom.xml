@@ -8,7 +8,7 @@
 
     <properties>
         <jdk>8</jdk>
-        <log4j>2.13.0</log4j>
+        <log4j>2.14.0</log4j>
         <selenium>3.141.59</selenium>
         <testng>7.0.0</testng>
         <htmlunit>2.39.0</htmlunit>
@@ -21,7 +21,7 @@
         <aspectj>1.8.10</aspectj>
         <maven-compiler-plugin>3.8.0</maven-compiler-plugin>
         <maven-surefire-plugin>2.22.2</maven-surefire-plugin>
-        <suiteXmlFile>SmokeSuite</suiteXmlFile>
+        <suiteXmlFile>IRCTCBooking</suiteXmlFile>
     </properties>
 
     <dependencies>

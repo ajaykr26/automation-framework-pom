@@ -5,8 +5,9 @@ import library.common.Constants;
 import library.common.Property;
 import library.reporting.ExtentReporter;
 import library.selenium.BasePO;
-import library.selenium.FactoryMethod;
 import org.openqa.selenium.By;
+
+import static library.selenium.FactoryMethod.*;
 
 public class Facebook_LoginPage extends BasePO {
 
@@ -54,10 +55,10 @@ public class Facebook_LoginPage extends BasePO {
         getElement(lastname).sendKeys(parseText("LASTNAME"));
         getElement(reg_email).sendKeys(parseText("EMAIL"));
         getElement(password_step_input).sendKeys(parseText("PASSWORD"));
-        FactoryMethod.getInputMethods().selectOptionFromDropdown("value", "10", day);
-        FactoryMethod.getInputMethods().selectOptionFromDropdown("value", "10", month);
-        FactoryMethod.getInputMethods().selectOptionFromDropdown("value", "1990", year);
-        FactoryMethod.getInputMethods().selectOptionFromRadioButtonGroup("value", "2", sex);
+        getSelectMethods().selectOptionFromDropdown("value", "10", day);
+        getSelectMethods().selectOptionFromDropdown("value", "10", month);
+        getSelectMethods().selectOptionFromDropdown("value", "1990", year);
+        getSelectMethods().selectOptionFromRadioButtonGroup("value", "2", sex);
         ExtentReporter.updateReport( "Facebook_LoginPage", "register",Status.PASS, "all the details provided");
 
     }

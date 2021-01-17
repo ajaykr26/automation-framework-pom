@@ -1,6 +1,8 @@
 package library.selenium.driver.factory;
 
 import library.common.TestContext;
+import library.selenium.driver.factory.DriverContext;
+import library.selenium.driver.factory.DriverManager;
 import library.selenium.driver.managers.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -39,21 +41,30 @@ public class DriverFactory {
     }
 
     private DriverManager setDriverManager() {
+        Server server = Server.valueOf(DriverContext.getInstance().getTechStack().get("seleniumServer").toLowerCase());
         Browser browser = Browser.valueOf(DriverContext.getInstance().getBrowserName().toLowerCase());
-        switch (browser) {
-            case chrome:
-                driverManager.set(new ChromeDriverManager());
+        switch (server) {
+            case remote_htmlunit:
+                driverManager.set(new HtmlUnitDriverManager());
                 break;
-            case firefox:
-                driverManager.set(new FirefoxDriverManager());
+            case remote_phantomjs:
+                driverManager.set(new PantomJSDriverManager());
                 break;
-            case iexplorer:
-                driverManager.set(new IEDriverManager());
-                break;
-            default:
-                driverManager.set(new ChromeDriverManager());
-                logger.debug("starting chrome as default brouser");
-                break;
+            case local:
+                switch (browser) {
+                    case chrome:
+                        driverManager.set(new ChromeDriverManager());
+                        break;
+                    case firefox:
+                        driverManager.set(new FirefoxDriverManager());
+                        break;
+                    case iexplorer:
+                        driverManager.set(new IEDriverManager());
+                        break;
+                    case edge:
+                        driverManager.set(new EdgeDriverManager());
+                        break;
+                }
         }
 
         return driverManager.get();
@@ -62,6 +73,10 @@ public class DriverFactory {
     public void quit() {
         driverManager.get().quitDriver();
         driverManager.remove();
+    }
+
+    public enum Server {
+        local, grid, saucelabs, appium, browserstack, remote_htmlunit, remote_phantomjs;
     }
 
     public enum Browser {

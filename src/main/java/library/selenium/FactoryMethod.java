@@ -2,7 +2,7 @@ package library.selenium;
 
 import library.selenium.common.*;
 
-public class FactoryMethod extends BasePO{
+public class FactoryMethod extends BasePO {
 
     public static UtilsMethods getMiscMethods() {
         return new UtilsMethods();
@@ -10,6 +10,10 @@ public class FactoryMethod extends BasePO{
 
     public static NavigationMethods getNavigateMethods() {
         return new NavigationMethods();
+    }
+
+    public static SelectMethods getSelectMethods() {
+        return new SelectMethods();
     }
 
     public static ClickMethods getClickMethods() {

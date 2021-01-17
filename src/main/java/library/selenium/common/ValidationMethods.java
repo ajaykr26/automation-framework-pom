@@ -1,13 +1,13 @@
 package library.selenium.common;
 
-import library.selenium.FactoryMethod;
+import library.selenium.BasePO;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class ValidationMethods extends FactoryMethod {
+public class ValidationMethods extends BasePO {
 
     private WebElement element = null;
 
