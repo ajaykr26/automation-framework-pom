@@ -1,7 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="166dbdbd-91ee-4971-98fe-2ef9135607dc" name="Default Changelist" comment="" />
+    <list default="true" id="166dbdbd-91ee-4971-98fe-2ef9135607dc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/FrameMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/InnputMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/SelectMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/UtilsMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/WindowMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extent-report/Facebook_Login/2020.10.08.13.42.02/html-report/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extent-report/Facebook_Login/2020.10.08.13.42.02/screenshots/Login To Facebook/2020.10.08.13.43.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extent-report/Facebook_Login/2020.10.08.13.42.02/screenshots/Login To Facebook/2020.10.08.13.43.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extent-report/Facebook_Login/2020.10.08.13.42.02/screenshots/Login To Facebook/2020.10.08.13.43.41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/Login To Facebook.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/BasePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/BasePO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/PageObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/AssertionMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/ValidationMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/ClickMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/ClickMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/CommonMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/ConfigMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/ErrorHandlingMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/InputMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/GetMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/JavascriptHandlingMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/JSMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/MiscMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/NavigateMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/NavigationMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/ObjectManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/ProgressMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/WaitMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/ScreenShotMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/TableMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/TableMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/common/TestCaseFailed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/common/TestFailed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/driver/factory/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/library/selenium/driver/factory/DriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/driver/managers/AppiumDriverManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/driver/managers/BrowserStackDriverManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/driver/managers/GridDriverManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/driver/managers/SafariDriverManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/library/selenium/driver/managers/SaucelabsDriverManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobjects/Facebook_LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobjects/Facebook_LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobjects/Facebook_SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageobjects/Facebook_SearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageobjects/Plurals_Membership.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testscripts/Facebook_Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testscripts/Facebook_Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testscripts/PluralsMembership.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/drivers/windows/IEDriverServer.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/drivers/windows/chromedriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/drivers/windows/geckodriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/automation-framework-pom.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/environments/UAT.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/environments/UAT.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/environments/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/BasePO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/library/selenium/BasePO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/library/selenium/BaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/PageObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/AssertionMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/ClickMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/library/selenium/common/ClickMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/CommonMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/ConfigMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/ErrorHandlingMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/InputMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/JavascriptHandlingMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/MiscMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/NavigateMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/ObjectManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/ProgressMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/ScreenShotMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/TableMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/library/selenium/common/TableMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/library/selenium/common/TestCaseFailed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pageobjects/Facebook_LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pageobjects/Facebook_LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pageobjects/Facebook_SearchPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pageobjects/Facebook_SearchPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pageobjects/IRCTCHomePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pageobjects/IRCTCRegistraionPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/testdata/IRCTCBooking.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/testscripts/Facebook_Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/testscripts/Facebook_Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/testscripts/IRCTCBooking.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,21 +87,31 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1anLqByUJtMhLMcaBHhZOzlnZHN" />
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/testdata" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/library/selenium/common" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\intelij-workspace\automation-framework-pom\src\main\java\library\selenium\common" />
+      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\resources\testdata" />
+      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom" />
+      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\resources\testsuites" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\resources\config\selenium\properties" />
       <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\resources\config\selenium" />
@@ -37,67 +120,8 @@
       <recent name="testscripts" />
       <recent name="pageobjects" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\resources\testdata" />
-      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom" />
-      <recent name="C:\Users\Ajay Kumar\IdeaProjects\automation-framework-pom\src\main\resources\testsuites" />
-    </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/src/main/resources/testsuites/IRCTCBooking.xml">
-    <configuration name="BasePageObject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="library.selenium.BasePageObject" />
-      <module name="automation-framework-pom" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="library.selenium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="testscripts.MainTest" />
-      <module name="automation-framework-pom" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testscripts.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/src/main/resources/testsuites/IRCTCBooking.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation-framework-pom" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testscripts.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/main/resources/testsuites/IRCTCBooking.xml" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <option name="VM_PARAMETERS" value="-ea  -Denvironment=UAT  -DtechStack=LOCAL_CHROME  -Dorg.apache.logging.log4j.level=DEBUG  -Dcukes.selenium.defaultFindRetries=2" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Facebook_Login.Test_001" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation-framework-pom" />
       <extension name="coverage">
@@ -116,21 +140,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.BasePageObject" />
-      <item itemvalue="Application.MainTest" />
-      <item itemvalue="TestNG.C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/src/main/resources/testsuites/IRCTCBooking.xml" />
-      <item itemvalue="TestNG.Facebook_Login.Test_001" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/Ajay Kumar/IdeaProjects/automation-framework-pom/src/main/resources/testsuites/IRCTCBooking.xml" />
         <item itemvalue="TestNG.Facebook_Login.Test_001" />
-        <item itemvalue="Application.MainTest" />
-        <item itemvalue="Application.BasePageObject" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -144,99 +160,16 @@
     </task>
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="275" y="4" key="#Plugins" timestamp="1599210238871">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="4" key="#Plugins/0.0.1366.728@0.0.1366.728" timestamp="1599210238871" />
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601964585125">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601964585125" />
-    <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598593153309">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1598593153309" />
-    <state x="272" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601904670969">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="272" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1601904670969" />
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597677287957">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1597677287957" />
-    <state x="257" y="133" width="988" height="595" key="#xdebugger.evaluate" timestamp="1602058347084">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="257" y="133" width="988" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1602058347084" />
-    <state x="463" y="81" key="FileChooserDialogImpl" timestamp="1602164351184">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="81" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602164351184" />
-    <state width="1323" height="309" key="GridCell.Tab.0.bottom" timestamp="1602164358488">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="309" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602164358488" />
-    <state width="1323" height="309" key="GridCell.Tab.0.center" timestamp="1602164358488">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="309" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602164358488" />
-    <state width="1323" height="309" key="GridCell.Tab.0.left" timestamp="1602164358473">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="309" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602164358473" />
-    <state width="1323" height="309" key="GridCell.Tab.0.right" timestamp="1602164358488">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="309" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602164358488" />
-    <state width="1323" height="230" key="GridCell.Tab.1.bottom" timestamp="1602059468671">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602059468666" />
-    <state width="1323" height="230" key="GridCell.Tab.1.center" timestamp="1602059468666">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1602059468666" />
-    <state width="1323" height="230" key="GridCell.Tab.1.left" timestamp="1602059468666">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1602059468666" />
-    <state width="1323" height="230" key="GridCell.Tab.1.right" timestamp="1602059468666">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1602059468666" />
-    <state x="213" y="18" key="Maven.ArtifactSearchDialog" timestamp="1597829952737">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="213" y="18" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1597829952737" />
-    <state x="184" y="8" key="SettingsEditor" timestamp="1599215056571">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1599215056571" />
-    <state width="451" height="332" key="XDebugger.FullValuePopup" timestamp="1601533010152">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="451" height="332" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1601533010152" />
-    <state x="447" y="32" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601960978798">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="447" y="32" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1601960978798" />
-    <state x="248" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1597807963904">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="248" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1597807963904" />
-    <state x="274" y="0" key="new project wizard" timestamp="1602935706082">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="274" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1602935706082" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1601957579861">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1601957579861" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1601977678554">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1601977678554" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -260,11 +193,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/pageobjects/Facebook_HomePage.java</url>
           <line>24</line>
           <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/library/selenium/common/InputMethods.java</url>
-          <line>121</line>
-          <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/testscripts/Facebook_Login.java</url>

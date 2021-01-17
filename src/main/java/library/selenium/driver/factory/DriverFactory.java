@@ -44,18 +44,6 @@ public class DriverFactory {
         Server server = Server.valueOf(DriverContext.getInstance().getTechStack().get("seleniumServer").toLowerCase());
         Browser browser = Browser.valueOf(DriverContext.getInstance().getBrowserName().toLowerCase());
         switch (server) {
-            case grid:
-                driverManager.set(new GridDriverManager());
-                break;
-            case saucelabs:
-                driverManager.set(new SaucelabsDriverManager());
-                break;
-            case appium:
-                driverManager.set(new AppiumDriverManager());
-                break;
-            case browserstack:
-                driverManager.set(new BrowserStackDriverManager());
-                break;
             case remote_htmlunit:
                 driverManager.set(new HtmlUnitDriverManager());
                 break;
@@ -72,9 +60,6 @@ public class DriverFactory {
                         break;
                     case iexplorer:
                         driverManager.set(new IEDriverManager());
-                        break;
-                    case safari:
-                        driverManager.set(new SafariDriverManager());
                         break;
                     case edge:
                         driverManager.set(new EdgeDriverManager());

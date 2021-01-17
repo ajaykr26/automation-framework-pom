@@ -6,7 +6,6 @@ import library.common.Encryptor;
 import library.common.Property;
 import library.common.TestContext;
 import library.reporting.ExtentReporter;
-import library.selenium.common.CommonMethods;
 import library.selenium.driver.factory.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,7 +20,7 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class BasePO implements CommonMethods {
+public class BasePO {
 
     protected Logger logger = LogManager.getLogger(BasePO.class);
 

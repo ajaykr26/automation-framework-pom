@@ -48,8 +48,8 @@ public class BaseTest {
             return techStack;
         } else {
             logger.info("techStach is not defined in vm arguments. getting the configuration from runtime.properties file");
-            techStack.put("seleniumServer", Property.getProperty(Constants.RUNTIME_PROP_FILE + "runtime.properties", "seleniumServer").toLowerCase());
-            techStack.put("browserName", Property.getProperty(Constants.RUNTIME_PROP_FILE + "runtime.properties", "browserName").toLowerCase());
+            techStack.put("seleniumServer", Property.getProperty(Constants.RUNTIME_PROP_FILE, "seleniumServer").toLowerCase());
+            techStack.put("browserName", Property.getProperty(Constants.RUNTIME_PROP_FILE, "browserName").toLowerCase());
             return techStack;
         }
 
