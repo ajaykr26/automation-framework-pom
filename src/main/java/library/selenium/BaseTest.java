@@ -2,10 +2,7 @@ package library.selenium;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
-import library.common.Constants;
-import library.common.FileHelper;
-import library.common.Property;
-import library.common.TestContext;
+import library.common.*;
 import library.reporting.ExtentManager;
 import library.selenium.driver.factory.DriverContext;
 import library.selenium.driver.factory.DriverFactory;
@@ -21,6 +18,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
+import static library.reporting.ExtentReporter.addLogsToExtentReport;
+import static library.reporting.ExtentReporter.getLogPath;
 
 public class BaseTest {
 
@@ -30,9 +31,18 @@ public class BaseTest {
     protected Logger logger = LogManager.getLogger(this.getClass().getName());
     private ExtentReports extentReports;
 
-    private void setDataDictionary(String testname) {
-        Map<String, String> datatable = FileHelper.getJSONToMap(FileHelper.getJSONObject(dataFile, testname));
+    private void setDataDictionary(String testName) {
+        Map<String, String> datatable = FileHelper.getJSONToMap(FileHelper.getJSONObject(dataFile, testName));
         TestContext.getInstance().testdata().putAll(datatable);
+    }
+
+    private void setPropDictionary() {
+        if (Property.getProperties(Constants.RUNTIME_PROP_FILE) != null) {
+            Map<String, String> propDataTable = FileHelper.getPropertiesAsMap(Objects.requireNonNull(Property.getProperties(Constants.RUNTIME_PROP_FILE)));
+            assert propDataTable != null;
+            TestContext.getInstance().testdata().putAll(propDataTable);
+        }
+
     }
 
     private Map<String, String> getTechStack() {
@@ -45,13 +55,12 @@ public class BaseTest {
                 techStack.put("seleniumServer", "local");
                 techStack.put("browserName", "chrome");
             }
-            return techStack;
         } else {
             logger.info("techStach is not defined in vm arguments. getting the configuration from runtime.properties file");
             techStack.put("seleniumServer", Property.getProperty(Constants.RUNTIME_PROP_FILE, "seleniumServer").toLowerCase());
             techStack.put("browserName", Property.getProperty(Constants.RUNTIME_PROP_FILE, "browserName").toLowerCase());
-            return techStack;
         }
+        return techStack;
 
     }
 
@@ -68,8 +77,8 @@ public class BaseTest {
     @BeforeMethod
     public void startUp(Method method) {
         Test test = method.getAnnotation(Test.class);
-        ThreadContext.put("testname", test.testName());
-        TestContext.getInstance().testdataPut("fw.testname", test.testName());
+        ThreadContext.put("testName", getLogPath() + test.testName());
+        TestContext.getInstance().testdataPut("fw.testName", test.testName());
         ExtentManager.startTest(test.testName(), test.description());
         setDataDictionary(test.testName());
         Property.setRuntimeProperties();
@@ -80,14 +89,19 @@ public class BaseTest {
 
     @AfterMethod
     protected void afterMethod(ITestResult result) {
+        String logLink = "../logs/" + TestContext.getInstance().testdataGet("fw.testName") + ".log";
         if (result.getStatus() == ITestResult.FAILURE) {
-            ExtentManager.getTest().log(Status.FAIL, result.getThrowable());
+            logger.error(result.getThrowable());
+            ExtentManager.getTest().log(Status.FAIL, "<a href='" + logLink + "'>click here to see the log</a>");
         } else if (result.getStatus() == ITestResult.SKIP) {
-            ExtentManager.getTest().log(Status.SKIP, "Test skipped " + result.getThrowable());
+            logger.warn(result.getThrowable());
+            ExtentManager.getTest().log(Status.SKIP, "<a href='" + logLink + "'>click here to see the log</a>");
         } else {
-            ExtentManager.getTest().log(Status.PASS, "Test passed");
+            ExtentManager.getTest().log(Status.PASS, "<a href='" + logLink + "'>click here to see the log</a>");
         }
         DriverFactory.getInstance().quit();
+        logger.info(String.format("Data Dictionary: %s", DataTableFormatter.getDataDictionaryAsFormattedTable()));
+        logger.info(String.format("Runtime properties: %s", DataTableFormatter.getMapAsFormattedTable(Property.getPropertiesAsMap(Constants.RUNTIME_PROP_FILE))));
     }
 
     @AfterSuite

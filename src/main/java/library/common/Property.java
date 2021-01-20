@@ -7,6 +7,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Property {
 
@@ -32,6 +35,21 @@ public class Property {
             return null;
         }
         return null;
+    }
+
+    public static Map<String, Object> getPropertiesAsMap(String propFilePath) {
+        PropertiesConfiguration props = getProperties(propFilePath);
+        Map<String, Object> propsMap = new HashMap<>();
+        if (props != null) {
+            Iterator<String> iterator = props.getKeys();
+            while (iterator.hasNext()) {
+                String key = iterator.next();
+                if (key != null) {
+                    propsMap.put(key, props.getProperty(key).toString());
+                }
+            }
+        }
+        return propsMap;
     }
 
     public static void setProperty(String propFilePath, String key, String value) {

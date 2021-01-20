@@ -13,11 +13,11 @@ public class Constants {
     public static final String SCREENSHOT_PATH = BASE_PATH + "screenshots/";
 
     public static final String TESTCASE_XLSX_FILE = BASE_PATH + "/src/main/resources/scripts/testcase.xlsx";
-    public static final String RUNTIME_PROP_FILE = BASE_PATH + "config/selenium/properties/" + "runtime.properties";
+    public static final String RUNTIME_PROP_FILE = BASE_PATH + "config/properties/" + "runtime.properties";
     public static final String KEYBOARD_JSON_FILE = BASE_PATH + "config/keyboard/" + "keyboard.json";
     public static final String ENVIRONMENT_PROP_FILE = BASE_PATH + "config/environments/" + Property.getVariable("environment") + ".properties";
     public static final String ENVIRONMENT_SECURE_PROP_FILE = BASE_PATH + "config/environments/SecureText-" + Property.getVariable("environment") + ".properties";
-    public static final String JSON_STACKS_FILE = BASE_PATH + "config/selenium/techstacks/" + Property.getVariable("techStack") + ".json";
+    public static final String JSON_STACKS_FILE = BASE_PATH + "config/techstacks/" + Property.getVariable("techStack") + ".json";
 
     public static String getCurrentEnvFilePath() {
         String currentEnv = Property.getVariable("environment") != null ? Property.getVariable("environment") :

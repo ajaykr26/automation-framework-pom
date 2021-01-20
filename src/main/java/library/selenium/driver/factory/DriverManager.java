@@ -50,7 +50,7 @@ public abstract class DriverManager {
         String extention = System.getProperty("os.name").split(" ")[0].toLowerCase().equalsIgnoreCase("windows") ? ".exe" : " ";
         String drivername = driver + extention;
         String driverPath = Property.getVariable("cuke.driverPath");
-        return (driverPath == null ? Constants.DRIVER_PATH + System.getProperty("os.name").split(" ")[0].toLowerCase() + "/" + drivername : driverPath);
+        return (driverPath == null ? Constants.DRIVER_PATH + drivername : driverPath);
     }
 
     protected abstract void setDriver();

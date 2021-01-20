@@ -1,6 +1,0 @@
-{
-  "platform": {
-    "seleniumServer": "remote_htmlunit",
-    "browserName": "firefox"
-  }
-}
