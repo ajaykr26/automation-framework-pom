@@ -33,7 +33,7 @@ echo 2. Regression Suite
 
 ::set choice=
 set /p choice=Enter the number to select Test Suite:
-if '%choice%'=='1' set testscripts=SmokeSuite.xml
-if '%choice%'=='2' set testscripts=RegressionSuite.xml
+if '%choice%'=='1' set suiteXmlFile=SmokeSuite
+if '%choice%'=='2' set suiteXmlFile=RegressionSuite
 
-mvn clean test -Denvironment=%environment% -DtechStack=%teckStack% -DsuiteXmlFile=%testscripts%
+mvn clean test -Denvironment=%environment% -DtechStack=%teckStack% -DsuiteXmlFile=%suiteXmlFile%

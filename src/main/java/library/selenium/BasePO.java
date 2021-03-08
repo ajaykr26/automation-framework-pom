@@ -5,15 +5,20 @@ import library.common.Constants;
 import library.common.Encryptor;
 import library.common.Property;
 import library.common.TestContext;
+import library.reporting.ExtentManager;
 import library.reporting.ExtentReporter;
+import library.selenium.driver.factory.DriverContext;
 import library.selenium.driver.factory.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -43,6 +48,11 @@ public class BasePO {
     public WebDriver getDriver() {
         logger.debug("obtaining the driver for current thread");
         return DriverFactory.getInstance().getDriver();
+    }
+
+    public WebDriver getDriver(String browser) {
+        logger.debug("creating the {} driver for current thread", browser);
+        return DriverFactory.getInstance().getDriver(browser);
     }
 
     protected WebDriverWait getWait() {
@@ -150,20 +160,6 @@ public class BasePO {
         }
         return parsedValue;
     }
-
-//    public void waitForPageToLoad() {
-//        long timeOut = Integer.parseInt(Property.getProperty(Constants.RUNTIME_PROP_FILE, "waitForPageLoad")) * 1000;
-//        long endTime = System.currentTimeMillis() + timeOut;
-//        while (System.currentTimeMillis() < endTime) {
-//            logger.info("waiting for page to be loaded completely");
-//            if (String.valueOf(((JavascriptExecutor) getDriver()).executeScript("return document.readyState")).equals("complete")) {
-//                logger.info("page loaded completely");
-//                break;
-//            } else {
-//                logger.info("error in page loading, time out reached: '{}' sec", timeOut);
-//            }
-//        }
-//    }
 
     public void performDriverOperation(String action) {
         logger.debug("performing driver operation: '{}'", action);

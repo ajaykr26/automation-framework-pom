@@ -16,7 +16,7 @@ if environment are not set in any of the above then default setting will be UAT 
 **vm arguments:**
 -ea 
 -Denvironment=UAT 
--DtechStack=LOCAL_CHROME 
+-DtechStack=REMOTE_HTMLUNIT_CHROME
 -Dorg.apache.logging.log4j.level=DEBUG 
 -Dcukes.selenium.defaultFindRetries=2
 

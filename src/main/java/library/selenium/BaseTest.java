@@ -78,6 +78,12 @@ public class BaseTest {
 
     }
 
+    public void createDriver(String browser) {
+        DriverContext.getInstance().setDriverContext(getTechStack());
+        DriverFactory.getInstance().getDriver();
+
+    }
+
     @AfterMethod
     protected void afterMethod(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {

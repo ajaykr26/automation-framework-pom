@@ -21,6 +21,13 @@ public abstract class DriverManager {
         return driver;
     }
 
+    public WebDriver getDriver(String browser) {
+        if (driver == null) {
+            setDriver();
+        }
+        return driver;
+    }
+
     public void quitDriver() {
         if (driver != null) {
             driver.quit();
