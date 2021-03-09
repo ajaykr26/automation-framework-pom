@@ -45,6 +45,11 @@ public class BasePO {
         return DriverFactory.getInstance().getDriver();
     }
 
+    public WebDriver getDriver(String browser) {
+        logger.debug("creating the {} driver for current thread", browser);
+        return DriverFactory.getInstance().getDriver(browser);
+    }
+
     protected WebDriverWait getWait() {
         logger.debug("obtaining the wait for current thread");
         return DriverFactory.getInstance().getWait();
@@ -150,20 +155,6 @@ public class BasePO {
         }
         return parsedValue;
     }
-
-//    public void waitForPageToLoad() {
-//        long timeOut = Integer.parseInt(Property.getProperty(Constants.RUNTIME_PROP_FILE, "waitForPageLoad")) * 1000;
-//        long endTime = System.currentTimeMillis() + timeOut;
-//        while (System.currentTimeMillis() < endTime) {
-//            logger.info("waiting for page to be loaded completely");
-//            if (String.valueOf(((JavascriptExecutor) getDriver()).executeScript("return document.readyState")).equals("complete")) {
-//                logger.info("page loaded completely");
-//                break;
-//            } else {
-//                logger.info("error in page loading, time out reached: '{}' sec", timeOut);
-//            }
-//        }
-//    }
 
     public void performDriverOperation(String action) {
         logger.debug("performing driver operation: '{}'", action);

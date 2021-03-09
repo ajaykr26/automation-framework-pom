@@ -112,39 +112,24 @@ public class ExtentReporter {
         return "RunReport_" + format.format(new Date()) + ".html";
     }
 
-    public static String getScreenshotAbsolutePath() {
-        return reportPath + "/screenshots/" + TestContext.getInstance().testdataGet("fw.testName");
-    }
-
-    public static String getLogPath() {
-        String logPath = reportPath + "/logs/";
-        File file = new File(logPath);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        return logPath;
+    public static String getScreenshotPath() {
+        return reportPath + "/screenshots/" + TestContext.getInstance().testdataGet("fw.testname");
     }
 
     public static void failTest(Throwable message) {
 
     }
 
-    public static void addLogsToExtentReport() {
-        String logLink = "../logs/" + TestContext.getInstance().testdataGet("fw.testName") + ".log";
-        ExtentManager.getTest().log(Status.valueOf("INFO"), "<a href='" + logLink + "'>click here to see the log</a>");
-
-    }
-
     public static String takeScreenshot() {
-        String screenShotPath = null;
+        String targetLocation = null;
 
         if (!DriverContext.getInstance().getTechStack().get("seleniumServer").startsWith("remote")) {
 
             String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-            String fileSeparator = System.getProperty("file.separator");
+            String fileSeperator = System.getProperty("file.separator");
             String screenShotName = timeStamp + ".png";
             try {
-                File file = new File(getScreenshotAbsolutePath());
+                File file = new File(getScreenshotPath());
                 if (!file.exists()) {
                     if (file.mkdirs()) {
                         logger.info("Directory: " + file.getAbsolutePath() + " is created!");
@@ -154,8 +139,7 @@ public class ExtentReporter {
 
                 }
                 File screenshotFile = ((TakesScreenshot) DriverFactory.getInstance().getDriver()).getScreenshotAs(OutputType.FILE);
-               String targetLocation = file + fileSeparator + screenShotName;
-                screenShotPath = "../screenshots/" +TestContext.getInstance().testdataGet("fw.testName") + fileSeparator + screenShotName;
+                targetLocation = file + fileSeperator + screenShotName;
                 File targetFile = new File(targetLocation);
                 FileHandler.copy(screenshotFile, targetFile);
             } catch (FileNotFoundException e) {
@@ -165,7 +149,7 @@ public class ExtentReporter {
             }
         } else logger.info("unable to take screenshot in headless execution");
 
-        return screenShotPath;
+        return targetLocation;
     }
 
 }

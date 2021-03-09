@@ -2,7 +2,6 @@ package library.common;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
@@ -34,16 +33,6 @@ public class FileHelper {
 
     public static Map<String, String> getJSONObjectToMap(String filepath, String key) {
         return FileHelper.getJSONToMap(FileHelper.getJSONObject(filepath, key));
-    }
-
-    public static Map<String, String> getPropertiesAsMap(PropertiesConfiguration properties) {
-        Map<String, String> propMap = new HashMap<>();
-        if (!properties.isEmpty()){
-            properties.getKeys().forEachRemaining(key-> propMap.put(key, properties.getProperty(key).toString()));
-            return propMap;
-        }
-        return null;
-
     }
 
     public static Map<String, String> getJSONObjectToMap(String filepath) {

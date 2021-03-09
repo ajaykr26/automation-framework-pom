@@ -36,6 +36,11 @@ public class DriverFactory {
         return driverManager.get().getDriver();
     }
 
+    public WebDriver getDriver(String browser) {
+
+        return driverManager.get().getDriver(browser);
+    }
+
     public WebDriverWait getWait() {
         return driverManager.get().getWait();
     }
