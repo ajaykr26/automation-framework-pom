@@ -8,6 +8,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 
 public class Encryptor {
@@ -18,7 +21,30 @@ public class Encryptor {
     }
 
     public static void main(String[] args) throws Exception {
-        writeSecureText("UAT", "emailPassword", "");
+        File folder = new File(Constants.ENVIRONMENT_PATH);
+        File[] files = folder.listFiles();
+        int i = 0;
+        Map<Object, String> envMap = new HashMap<Object, String>();
+        assert files != null;
+        for (File file : files) {
+            if (!file.getName().startsWith("SecureText-")) {
+                envMap.put(i, file.getName().replace(".properties", ""));
+                System.out.println(i + ". " + file.getName().replace(".properties", ""));
+                i++;
+            }
+        }
+        Scanner intScanner = new Scanner(System.in);
+        System.out.println("Please select the environment");
+        int envir = intScanner.nextInt();
+        String environment = envMap.get(envir);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please enter the key");
+        String key = scanner.nextLine();
+        System.out.println("Please enter the value");
+        String value = scanner.nextLine();
+
+        writeSecureText(environment, key, value);
     }
 
     private static void writeSecureText( String environment, String key, String valueToEncrypt) throws IOException {
