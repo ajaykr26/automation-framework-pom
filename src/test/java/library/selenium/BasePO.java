@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 
 public class BasePO {
 
-    protected Logger logger = LogManager.getLogger(BasePO.class);
+    protected static Logger logger = LogManager.getLogger(BasePO.class);
 
     public BasePO() {
     }
@@ -107,7 +107,7 @@ public class BasePO {
         }
     }
 
-    protected String parseText(String string) {
+    protected static String parseText(String string) {
         String parsedValue = null;
         if (TestContext.getInstance().testdataGet(string) != null) {
             parsedValue = TestContext.getInstance().testdataGet(string).toString();

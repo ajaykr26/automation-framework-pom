@@ -1,21 +1,31 @@
 package library.selenium.common;
 
 import library.selenium.BasePO;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBuffer;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
 import java.util.List;
 
 public class ValidationMethods extends BasePO {
+    protected static Logger logger = LogManager.getLogger(ValidationMethods.class);
 
     private WebElement element = null;
-
 
     public String getPageTitle() {
         return getDriver().getTitle();
     }
-
 
     public void checkTitle(String title, boolean testCase) throws TestFailed {
         String pageTitle = getPageTitle();
@@ -29,7 +39,6 @@ public class ValidationMethods extends BasePO {
         }
     }
 
-
     public void checkPartialTitle(String partialTitle, boolean testCase) throws TestFailed {
         String pageTitle = getPageTitle();
         if (testCase) {
@@ -41,13 +50,11 @@ public class ValidationMethods extends BasePO {
         }
     }
 
-
     public String getElementText(String locatorType, String locator) {
         element = getWait().until(ExpectedConditions.presenceOfElementLocated(getObjectByType(locatorType, locator)));
         return element.getText();
 
     }
-
 
     public void validateElementText(String matchType, String locatorType, String actualValue, String locator) throws TestFailed {
         String elementText = getElementText(locatorType, locator);
@@ -68,7 +75,6 @@ public class ValidationMethods extends BasePO {
 
     }
 
-
     public void checkElementText(String locatorType, String actualValue, String locator, boolean testCase) throws TestFailed {
         String elementText = getElementText(locatorType, locator);
 
@@ -80,7 +86,6 @@ public class ValidationMethods extends BasePO {
                 throw new TestFailed("Text Matched");
         }
     }
-
 
     public void checkElementPartialText(String locatorType, String actualValue, String locator, boolean testCase) throws TestFailed {
         String elementText = getElementText(locatorType, locator);
@@ -94,12 +99,10 @@ public class ValidationMethods extends BasePO {
         }
     }
 
-
     public boolean isElementEnabled(String locatorType, String locator) {
         element = getWait().until(ExpectedConditions.presenceOfElementLocated(getObjectByType(locatorType, locator)));
         return element.isEnabled();
     }
-
 
     public void checkElementEnable(String locatorType, String locator, boolean testCase) throws TestFailed {
         boolean result = isElementEnabled(locatorType, locator);
@@ -112,12 +115,10 @@ public class ValidationMethods extends BasePO {
         }
     }
 
-
     public String getElementAttribute(String locatorType, String locator, String attributeName) {
         element = getWait().until(ExpectedConditions.presenceOfElementLocated(getObjectByType(locatorType, locator)));
         return element.getAttribute(attributeName);
     }
-
 
     public void checkElementAttribute(String locatorType, String attributeName, String attributeValue, String locator, boolean testCase) throws TestFailed {
         String attrVal = getElementAttribute(locatorType, locator, attributeName);
@@ -130,12 +131,10 @@ public class ValidationMethods extends BasePO {
         }
     }
 
-
     public boolean isElementDisplayed(String locatorType, String locator) {
         element = getWait().until(ExpectedConditions.presenceOfElementLocated(getObjectByType(locatorType, locator)));
         return element.isDisplayed();
     }
-
 
     public void checkElementPresence(String locatorType, String locator, boolean testCase) throws TestFailed {
         if (testCase) {
@@ -152,7 +151,6 @@ public class ValidationMethods extends BasePO {
         }
     }
 
-
     public void isCheckboxChecked(String locatorType, String locator, boolean shouldBeChecked) throws TestFailed {
         WebElement checkbox = getWait().until(ExpectedConditions.presenceOfElementLocated(getObjectByType(locatorType, locator)));
         if ((!checkbox.isSelected()) && shouldBeChecked)
@@ -160,7 +158,6 @@ public class ValidationMethods extends BasePO {
         else if (checkbox.isSelected() && !shouldBeChecked)
             throw new TestFailed("Checkbox is checked");
     }
-
 
     public void isRadioButtonSelected(String locatorType, String locator, boolean shouldBeSelected) throws TestFailed {
         WebElement radioButton = getWait().until(ExpectedConditions.presenceOfElementLocated(getObjectByType(locatorType, locator)));
@@ -190,17 +187,45 @@ public class ValidationMethods extends BasePO {
         }
     }
 
-
     public String getAlertText() {
         return getDriver().switchTo().alert().getText();
     }
-
 
     public void checkAlertText(String text) throws TestFailed {
         if (!getAlertText().equals(text))
             throw new TestFailed("Text on alert pop up not matched");
     }
 
+    public static boolean compareScreenshot(File fileExpected, File fileActual) throws IOException {
+        boolean matchFlag = true;
+        try {
+            BufferedImage bufferedImageActual = ImageIO.read(fileActual);
+            BufferedImage bufferedImageExpected = ImageIO.read(fileExpected);
+            DataBuffer dataBufferFileActual = bufferedImageActual.getData().getDataBuffer();
+            DataBuffer dataBufferFileExpected = bufferedImageExpected.getData().getDataBuffer();
+
+            int sizeFileActual = dataBufferFileActual.getSize();
+            for (int i = 0; i < sizeFileActual; i++) {
+                if (dataBufferFileActual.getElem(i) != dataBufferFileExpected.getElem(i)) {
+                    matchFlag = false;
+                    break;
+                }
+            }
+        } catch (FileNotFoundException exception) {
+            logger.error(exception.getMessage());
+        }
+        return matchFlag;
+    }
+
+    public static void getImageFromUrl(String imageUrl, String destinationFile, String filename) throws IOException {
+        URL url = new URL(imageUrl);
+        InputStream inputStream = url.openStream();
+        File file = new File(destinationFile + filename);
+        if (!new File(destinationFile).exists()) new File(destinationFile).mkdir();
+        if (file.exists()) file.delete();
+        Files.copy(inputStream, file.toPath());
+        inputStream.close();
+    }
 
     public void isOptionFromDropdownSelected(String locatorType, String by, String option, String locator, boolean shouldBeSelected) throws TestFailed {
         Select selectList = null;

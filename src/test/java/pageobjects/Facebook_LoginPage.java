@@ -6,8 +6,13 @@ import library.common.Property;
 import library.reporting.ExtentReporter;
 import library.selenium.BasePO;
 import org.openqa.selenium.By;
+import org.testng.Assert;
+
+import java.io.File;
 
 import static library.selenium.FactoryMethod.*;
+import static library.selenium.common.ValidationMethods.compareScreenshot;
+import static library.selenium.common.ValidationMethods.getImageFromUrl;
 
 public class Facebook_LoginPage extends BasePO {
 
@@ -66,5 +71,14 @@ public class Facebook_LoginPage extends BasePO {
     public void manualyProceed() {
         logger.debug("proceed manually and resume execution");
     }
+
+    public void validateImageMatched(String imageUrl, String filename) throws Throwable {
+        filename = parseText(filename);
+        imageUrl = parseText(imageUrl);
+        getImageFromUrl(imageUrl, Constants.ACTUAL_IMAGE_PATH, filename);
+        boolean isVerified = compareScreenshot(new File(Constants.EXPECTED_IMAGE_PATH + filename), new File(Constants.ACTUAL_IMAGE_PATH + filename));
+        Assert.assertTrue(isVerified);
+    }
+
 
 }
