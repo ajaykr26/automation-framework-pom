@@ -15,6 +15,7 @@ public class TestContext {
     protected Logger logger = LogManager.getLogger(this.getClass().getName());
     private SoftAssertions softAssert = null;
     private Map<String, Object> testdata = null;
+    private Map<String, Object> propdata = null;
     private long threadToEnvID;
     private Set<Class<?>> setOfPageObjects = null;
     private Set<File> setOfFeatureFiles = null;
@@ -43,9 +44,25 @@ public class TestContext {
             testdata = new HashMap<>();
         return testdata;
     }
-
+    public Map<String, Object> propData() {
+        if (propdata == null)
+            propdata = new HashMap<>();
+        return propdata;
+    }
     public void testdataPut(String key, Object value) {
         testdata().put(key, value);
+    }
+    public void propDataPut(String key, Object value) {
+        propdata.put(key, value);
+    }
+    public Object propDataGet(String key) {
+        if (propdata.get(key) != null) {
+            return propdata.get(key);
+        } else if (propdata.get(key.toLowerCase()) != null) {
+            logger.warn("exact key not found for the key '{}' please check the key name", key);
+            return propdata.get(key.toLowerCase());
+        }
+        return propdata.get(key);
     }
 
     public Object testdataGet(String key) {

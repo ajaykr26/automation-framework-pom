@@ -4,7 +4,6 @@ public class Constants {
 
     public static final String ATTRIBUTE_FOR_TABLE_CELL_COMPARE = "fw.attributeForTableCellCompare";
     public static final String ATTRIBUTE_FOR_TABLE_HEADER_COMPARE = "fw.attributeForTableHeaderCompare";
-    public static final String XPATH_FOR_LABELS = "fw.xPathForLabels";
     public static final String XPATH_FOR_LABELS_DELIMETER = "--XPATH--";
     public static final String BASE_PATH = System.getProperty("user.dir") + "/src/test/resources/";
     public static final String USER_DIR = System.getProperty("user.dir");
