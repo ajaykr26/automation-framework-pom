@@ -37,9 +37,22 @@ public class Facebook_LoginPage extends BasePO {
             getDriver().manage().window().maximize();
             logger.info("application {} launched in new window", url);
             getDriver().get(url);
-            ExtentReporter.updateReport("Facebook_LoginPage", "launchApplication",Status.PASS, "application launched successfully");
+            ExtentReporter.updateReport("Facebook_LoginPage", "launchApplication", Status.PASS, "application launched successfully");
         } else {
-            ExtentReporter.updateReport( "Facebook_LoginPage", "launchApplication",Status.FAIL, "application not launched successfully");
+            ExtentReporter.updateReport("Facebook_LoginPage", "launchApplication", Status.FAIL, "application not launched successfully");
+            logger.error("application url not defined in the file: " + Constants.getCurrentEnvFilePath());
+        }
+    }
+
+    public void launchApplication(String applicationName, String browserName) {
+        String url = Property.getProperty(Constants.getCurrentEnvFilePath(), applicationName);
+        if (url != null) {
+            getDriver(browserName).manage().window().maximize();
+            logger.info("application {} launched in new window", url);
+            getDriver().get(url);
+            ExtentReporter.updateReport("Facebook_LoginPage", "launchApplication", Status.PASS, "application launched successfully");
+        } else {
+            ExtentReporter.updateReport("Facebook_LoginPage", "launchApplication", Status.FAIL, "application not launched successfully");
             logger.error("application url not defined in the file: " + Constants.getCurrentEnvFilePath());
         }
     }
@@ -51,7 +64,7 @@ public class Facebook_LoginPage extends BasePO {
 
     public void navigateToRegistrationPage() {
         getElement(register).click();
-        ExtentReporter.updateReport( "Facebook_LoginPage", "navigateToRegistrationPage",Status.PASS, "navigated to Registration Page");
+        ExtentReporter.updateReport("Facebook_LoginPage", "navigateToRegistrationPage", Status.PASS, "navigated to Registration Page");
     }
 
     public void register() {
@@ -64,7 +77,7 @@ public class Facebook_LoginPage extends BasePO {
         getSelectMethods().selectOptionFromDropdown("value", "10", month);
         getSelectMethods().selectOptionFromDropdown("value", "1990", year);
         getSelectMethods().selectOptionFromRadioButtonGroup("value", "2", sex);
-        ExtentReporter.updateReport( "Facebook_LoginPage", "register",Status.PASS, "all the details provided");
+        ExtentReporter.updateReport("Facebook_LoginPage", "register", Status.PASS, "all the details provided");
 
     }
 

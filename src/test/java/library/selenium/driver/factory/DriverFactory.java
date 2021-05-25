@@ -37,7 +37,6 @@ public class DriverFactory {
     }
 
     public WebDriver getDriver(String browser) {
-
         return driverManager.get().getDriver(browser);
     }
 
