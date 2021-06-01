@@ -16,6 +16,10 @@ public class AlertHandelling extends BaseTest {
     public void Test_001() {
         HandleAlerts handleAlerts = new HandleAlerts();
         handleAlerts.launchAllertApps("https://chercher.tech/practice/practice-pop-ups-selenium-webdriver");
+        DriverFactory.getInstance().getDriver().findElement(By.name("confirmation")).click();
+        handleAlerts.storeAlertMessage("alertMsg");
+        handleAlerts.dismissAlert();
+        DriverFactory.getInstance().getDriver().findElement(By.name("confirmation")).click();
         handleAlerts.acceptAlert();
         DriverFactory.getInstance().getDriver().findElement(By.name("prompt")).click();
         handleAlerts.enterValueIntoAlertTextbox("alertValure");
