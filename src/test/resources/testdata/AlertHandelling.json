@@ -1,0 +1,40 @@
+{
+  "Simple Alert": {
+    "FIRSTNAME": "ajay",
+    "LASTNAME": "kumar",
+    "EMAIL": "ajaykr.mailbox@hotmail.com",
+    "PASSWORD": "1God@earth",
+    "imageUrl": "https://www.seleniumeasy.com/sites/all/themes/seasy/logo.png",
+    "imageFilename": "logo.png"
+  },
+  "Login To Facebook two": {
+    "FIRSTNAME": "ajay",
+    "LASTNAME": "kumar",
+    "EMAIL": "ajaykr.mailbox@hotmail.com",
+    "PASSWORD": "1God@earth"
+  },
+  "Login To Facebook three": {
+    "FIRSTNAME": "ajay",
+    "LASTNAME": "kumar",
+    "EMAIL": "ajaykr.mailbox@hotmail.com",
+    "PASSWORD": "1God@earth"
+  },
+  "Login To Facebook four": {
+    "FIRSTNAME": "ajay",
+    "LASTNAME": "kumar",
+    "EMAIL": "ajaykr.mailbox@hotmail.com",
+    "PASSWORD": "1God@earth"
+  },
+  "Login To Facebook five": {
+    "FIRSTNAME": "ajay",
+    "LASTNAME": "kumar",
+    "EMAIL": "ajaykr.mailbox@hotmail.com",
+    "PASSWORD": "1God@earth"
+  },
+  "Login To Facebook six": {
+    "FIRSTNAME": "ajay",
+    "LASTNAME": "kumar",
+    "EMAIL": "ajaykr.mailbox@hotmail.com",
+    "PASSWORD": "1God@earth"
+  }
+}
