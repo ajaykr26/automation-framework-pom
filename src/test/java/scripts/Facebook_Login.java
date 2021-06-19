@@ -1,9 +1,7 @@
-package testscripts;
+package scripts;
 
 import library.selenium.BaseTest;
-import library.selenium.PageFactory;
 import org.testng.annotations.Test;
-import pageobjects.Facebook_LoginPage;
 
 import static library.selenium.PageFactory.getFacebookLoginPage;
 

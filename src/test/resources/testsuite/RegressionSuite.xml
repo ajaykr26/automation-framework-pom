@@ -3,7 +3,7 @@
 <suite name="Smoke Suite" parallel="methods" thread-count="5">
     <test name="Smoke Test">
         <classes>
-            <class name="testscripts.Facebook_Login"/>
+            <class name="scripts.Facebook_Login"/>
         </classes>
     </test>
 </suite>

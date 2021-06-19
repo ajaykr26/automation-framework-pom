@@ -1,7 +1,6 @@
-package testscripts;
+package scripts;
 
 import library.selenium.BaseTest;
-import library.selenium.driver.factory.DriverContext;
 import library.selenium.driver.factory.DriverFactory;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -10,7 +9,7 @@ import pageobjects.HandleAlerts;
 import static library.selenium.PageFactory.getFacebookLoginPage;
 
 
-public class AlertHandelling extends BaseTest {
+public class AlertHandling extends BaseTest {
 
     @Test(testName = "Simple Alert", description = "The simple alert class in Selenium displays some information or warning on the screen")
     public void Test_001() {

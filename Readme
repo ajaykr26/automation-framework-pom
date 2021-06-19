@@ -9,7 +9,7 @@ Framework Includes
 
 * suitename, testname and description are mandatory to provide in @Test()
 * data set name should be same in the JSON as the testname
-* JSON name for testscripts data should be same as the class name of the testscripts class
+* JSON name for scripts data should be same as the class name of the scripts class
 
 browser and environment can be set from **vm arguments:** or **UAT.properties** file
 if environment are not set in any of the above then default setting will be UAT and LOCAL_CHROME.
@@ -28,10 +28,10 @@ environment option: UAT, SIT, STG
 emailSenderPassword
 applicationUserPassword
 
-* Commanline option to run testscripts suite:
-mvn clean testscripts -Denvironment="UAT" -DtechStack="LOCAL_CHROME" -DsuiteXmlFile=SmokeSuite.xml
+* Commanline option to run scripts suite:
+mvn clean scripts -Denvironment="UAT" -DtechStack="LOCAL_CHROME" -DsuiteXmlFile=SmokeSuite.xml
 
 * TestRunner.bat file
 1. select environment
 2. select plateform
-3. select testscripts suite
+3. select scripts suite
