@@ -2,17 +2,12 @@ package pageobjects;
 
 import com.aventstack.extentreports.Status;
 import library.common.Constants;
-import library.common.Property;
 import library.reporting.ExtentReporter;
 import library.selenium.BasePO;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import java.io.File;
-
-import static library.selenium.FactoryMethod.*;
-import static library.selenium.common.ValidationMethods.compareScreenshot;
-import static library.selenium.common.ValidationMethods.getImageFromUrl;
 
 public class Facebook_LoginPage extends BasePO {
 
@@ -31,32 +26,6 @@ public class Facebook_LoginPage extends BasePO {
     private final By register = By.xpath("//a[@data-testid='open-registration-form-button']");
 
 
-    public void launchApplication(String applicationName) {
-        String url = Property.getProperty(Constants.getCurrentEnvFilePath(), applicationName);
-        if (url != null) {
-            getDriver().manage().window().maximize();
-            logger.info("application {} launched in new window", url);
-            getDriver().get(url);
-            ExtentReporter.updateReport("Facebook_LoginPage", "launchApplication", Status.PASS, "application launched successfully");
-        } else {
-            ExtentReporter.updateReport("Facebook_LoginPage", "launchApplication", Status.FAIL, "application not launched successfully");
-            logger.error("application url not defined in the file: " + Constants.getCurrentEnvFilePath());
-        }
-    }
-
-    public void launchApplication(String applicationName, String browserName) {
-        String url = Property.getProperty(Constants.getCurrentEnvFilePath(), applicationName);
-        if (url != null) {
-            getDriver(browserName).manage().window().maximize();
-            logger.info("application {} launched in new window", url);
-            getDriver().get(url);
-            ExtentReporter.updateReport("Facebook_LoginPage", "launchApplication", Status.PASS, "application launched successfully");
-        } else {
-            ExtentReporter.updateReport("Facebook_LoginPage", "launchApplication", Status.FAIL, "application not launched successfully");
-            logger.error("application url not defined in the file: " + Constants.getCurrentEnvFilePath());
-        }
-    }
-
     public void loginToApplication() {
         getElement(username).sendKeys(parseText("USERNAME"));
         getElement(password).sendKeys(parseText("PASSWORD"));
@@ -73,16 +42,12 @@ public class Facebook_LoginPage extends BasePO {
         getElement(lastname).sendKeys(parseText("LASTNAME"));
         getElement(reg_email).sendKeys(parseText("EMAIL"));
         getElement(password_step_input).sendKeys(parseText("PASSWORD"));
-        getSelectMethods().selectOptionFromDropdown("value", "10", day);
-        getSelectMethods().selectOptionFromDropdown("value", "10", month);
-        getSelectMethods().selectOptionFromDropdown("value", "1990", year);
-        getSelectMethods().selectOptionFromRadioButtonGroup("value", "2", sex);
+        selectOptionFromDropdown("value", "10", day);
+        selectOptionFromDropdown("value", "10", month);
+        selectOptionFromDropdown("value", "1990", year);
+        selectOptionFromRadioButtonGroup("value", "2", sex);
         ExtentReporter.updateReport("Facebook_LoginPage", "register", Status.PASS, "all the details provided");
 
-    }
-
-    public void manualyProceed() {
-        logger.debug("proceed manually and resume execution");
     }
 
     public void validateImageMatched(String imageUrl, String filename) throws Throwable {
@@ -92,6 +57,4 @@ public class Facebook_LoginPage extends BasePO {
         boolean isVerified = compareScreenshot(new File(Constants.EXPECTED_IMAGE_PATH + filename), new File(Constants.ACTUAL_IMAGE_PATH + filename));
         Assert.assertTrue(isVerified);
     }
-
-
 }

@@ -3,4 +3,5 @@
     "seleniumServer": "local",
     "browserName": "chrome"
   }
+
 }

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Smoke Suite" parallel="methods" thread-count="5">
-    <test name="Smoke Test">
+<suite name="Smoke Suite" parallel="true" thread-count="5">
+    <test name="chrome test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="scripts.Facebook_Login"/>
+        </classes>
+    </test>
+    <test name="firefox test">
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="scripts.Facebook_Login"/>
         </classes>

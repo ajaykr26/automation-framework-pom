@@ -33,8 +33,8 @@ public class BaseTest {
     protected Logger logger = LogManager.getLogger(this.getClass().getName());
     private ExtentReports extentReports;
 
-    private void setDataDictionary(String testname) {
-        Map<String, String> datatable = FileHelper.getJSONToMap(FileHelper.getJSONObject(dataFile, testname));
+    private void setDataDictionary(String testName) {
+        Map<String, String> datatable = FileHelper.getJSONToMap(FileHelper.getJSONObject(dataFile, testName));
         TestContext.getInstance().testdata().putAll(datatable);
     }
 
@@ -53,13 +53,12 @@ public class BaseTest {
                 techStack.put("seleniumServer", "local");
                 techStack.put("browserName", "chrome");
             }
-            return techStack;
         } else {
-            logger.info("techStach is not defined in vm arguments. getting the configuration from runtime.properties file");
+            logger.info("techStack is not defined in vm arguments. getting the configuration from runtime.properties file");
             techStack.put("seleniumServer", Property.getProperty(Constants.RUNTIME_PROP_FILE, "seleniumServer").toLowerCase());
             techStack.put("browserName", Property.getProperty(Constants.RUNTIME_PROP_FILE, "browserName").toLowerCase());
-            return techStack;
         }
+        return techStack;
 
     }
 

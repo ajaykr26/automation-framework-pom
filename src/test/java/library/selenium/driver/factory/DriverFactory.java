@@ -20,9 +20,9 @@ public class DriverFactory {
             return setDriverManager();
         }
     };
-
-    private DriverFactory() {
-    }
+//
+//    private DriverFactory() {
+//    }
 
     public static DriverFactory getInstance() {
         return instance;
