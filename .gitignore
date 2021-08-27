@@ -9,9 +9,8 @@
 *.allure
 *.idea
 *target
-
+test-output
 *.settings
-
 *logs
 *extent-report
 *expected-image
