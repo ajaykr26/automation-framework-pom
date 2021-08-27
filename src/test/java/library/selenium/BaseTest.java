@@ -29,7 +29,6 @@ public class BaseTest {
     private static final String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
     public static String reportPath;
     private static String dataFile;
-    private static String propFile;
     protected Logger logger = LogManager.getLogger(this.getClass().getName());
     private ExtentReports extentReports;
 
@@ -68,8 +67,8 @@ public class BaseTest {
         String testsuite = getClass().getSimpleName();
         TestContext.getInstance().testdataPut("testsuite", testsuite);
         dataFile = Constants.TESTDATA_PATH + testsuite + ".json";
-        propFile = Constants.RUNTIME_PROP_FILE;
-        reportPath = System.getProperty("user.dir") + "/extent-report/" + testsuite + "/" + timeStamp;
+        String propFile = Constants.RUNTIME_PROP_FILE;
+        reportPath = System.getProperty("user.dir") + "/reports/" + testsuite + "/" + timeStamp;
         extentReports = ExtentManager.getReporter(reportPath + "/html-report");
     }
 
