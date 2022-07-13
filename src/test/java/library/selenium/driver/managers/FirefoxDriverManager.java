@@ -24,7 +24,7 @@ public class FirefoxDriverManager extends DriverManager {
 
         if (Property.getVariable("cukes.webdrivermanager") != null && Property.getVariable("cukes.webdrivermanager").equalsIgnoreCase("true")) {
             if (Property.getVariable("cukes.firefoxDriver") != null) {
-                WebDriverManager.firefoxdriver().version(Property.getVariable("cukes.firefoxDriver")).setup();
+                WebDriverManager.firefoxdriver().driverVersion(Property.getVariable("cukes.firefoxDriver")).setup();
             } else {
                 WebDriverManager.firefoxdriver().setup();
 

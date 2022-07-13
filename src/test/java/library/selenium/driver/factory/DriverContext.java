@@ -8,7 +8,7 @@ import java.util.Map;
 public class DriverContext {
 
     private static List<DriverContext> threads = new ArrayList<>();
-    private Map<String, String> techStack = null;
+    private Map<String, String> techstack = null;
     private long currentEnvThreadId;
     private boolean keepBrowserOpen = false;
 
@@ -32,39 +32,39 @@ public class DriverContext {
     }
 
 
-    public void setDriverContext(Map<String, String> techStack) {
-        setTechStack(techStack);
+    public void setDriverContext(Map<String, String> techstack) {
+        setTechStack(techstack);
     }
 
     public Map<String, String> getTechStack() {
-        return this.techStack;
+        return this.techstack;
     }
 
-    public void setTechStack(Map<String, String> techStack) {
-        this.techStack = techStack;
+    public void setTechStack(Map<String, String> techstack) {
+        this.techstack = techstack;
     }
 
     public String getBrowserName() {
-        if (techStack == null) {
+        if (techstack == null) {
             return null;
         } else {
-            return this.techStack.get("browserName") == null ? this.techStack.get("browser") : this.techStack.get("browserName");
+            return this.techstack.get("browserName") == null ? this.techstack.get("browser") : this.techstack.get("browserName");
         }
     }
 
     public String getBrowserVersion() {
-        if (techStack == null) {
+        if (techstack == null) {
             return null;
         } else {
-            return this.techStack.get("version") == null ? this.techStack.get("browser_version") : this.techStack.get("version");
+            return this.techstack.get("version") == null ? this.techstack.get("browser_version") : this.techstack.get("version");
         }
     }
 
     public String getPlatform() {
-        if (techStack == null) {
+        if (techstack == null) {
             return null;
         } else {
-            return this.techStack.get("platform") == null ? this.techStack.get("os") + "_" + this.techStack.get("os_version") : this.techStack.get("platform");
+            return this.techstack.get("platform") == null ? this.techstack.get("os") + "_" + this.techstack.get("os_version") : this.techstack.get("platform");
         }
     }
 

@@ -1,6 +1,6 @@
 {
   "platform": {
-    "seleniumServer": "remote_htmlunit",
+    "serverName": "remote_htmlunit",
     "browserName": "chrome"
   }
 }

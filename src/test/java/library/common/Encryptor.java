@@ -21,7 +21,7 @@ public class Encryptor {
     }
 
     /*
-        public static void main(String[] args) throws Exception {
+        public static void main(Str1ing[] args) throws Exception {
             File folder = new File(Constants.ENVIRONMENT_PATH);
             File[] files = folder.listFiles();
             int i = 0;

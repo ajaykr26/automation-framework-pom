@@ -22,7 +22,7 @@ public class Capabilities {
 
         desiredCapabilities = new DesiredCapabilities();
 
-        if (!map.get("seleniumServer").equalsIgnoreCase("grid")) {
+        if (!map.get("serverName").equalsIgnoreCase("grid")) {
             desiredCapabilities.setCapability("name", TestContext.getInstance().testdataGet("fw.testDescription"));
         }
         if (TestContext.getInstance().testdata().containsKey("fw.projectName")) {
@@ -38,7 +38,7 @@ public class Capabilities {
             desiredCapabilities.setCapability("appActivity", TestContext.getInstance().testdataGet("fw.appActivity"));
         }
         for (Map.Entry<String, String> pair : map.entrySet()) {
-            if (!pair.getKey().equalsIgnoreCase("seleniumServer") && !pair.getKey().equalsIgnoreCase("description"))
+            if (!pair.getKey().equalsIgnoreCase("serverName") && !pair.getKey().equalsIgnoreCase("description"))
                 if (pair.getValue().equals("iexplorer")) {
                     desiredCapabilities.setCapability(pair.getKey(), "internet explorer");
                 } else {

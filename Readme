@@ -5,18 +5,18 @@ Framework Includes
     parseText(), parseMatchingText(), parseSecureText(), 
 3. Maven
 4. TestNG 
-5. Borwser - htmlunit, chrome, firfox, iexplore
+5. Browser - htmlunit, chrome, firefox, iexplore
 
 * suitename, testname and description are mandatory to provide in @Test()
-* data set name should be same in the JSON as the testname
-* JSON name for scripts data should be same as the class name of the scripts class
+* data set name in the JSON should be same as the testname
+* JSON name for test data should be same as the class name of the testscripts class
 
 browser and environment can be set from **vm arguments:** or **UAT.properties** file
 if environment are not set in any of the above then default setting will be UAT and LOCAL_CHROME.
 **vm arguments:**
 -ea 
 -Denvironment=UAT 
--DtechStack=REMOTE_HTMLUNIT_CHROME
+-Dtechstack=REMOTE_HTMLUNIT_CHROME
 -Dorg.apache.logging.log4j.level=DEBUG 
 -Dcukes.selenium.defaultFindRetries=2
 
@@ -28,10 +28,10 @@ environment option: UAT, SIT, STG
 emailSenderPassword
 applicationUserPassword
 
-* Commanline option to run scripts suite:
-mvn clean scripts -Denvironment="UAT" -DtechStack="LOCAL_CHROME" -DsuiteXmlFile=SmokeSuite.xml
+* Commanline option to run testscripts suite:
+mvn clean testscripts -Denvironment="UAT" -DtechStack="LOCAL_CHROME" -DsuiteXmlFile=SmokeSuite.xml
 
 * TestRunner.bat file
 1. select environment
 2. select plateform
-3. select scripts suite
+3. select testscripts suite

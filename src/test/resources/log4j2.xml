@@ -24,6 +24,9 @@
         </Routing>
     </appenders>
     <loggers>
+        <Logger name="org.apache.commons" level="error">
+            <AppenderRef ref="Console"/>
+        </Logger>
         <root level="debug">
             <appender-ref ref="Console" level="debug"/>
             <appender-ref ref="routingAppender" level="debug"/>

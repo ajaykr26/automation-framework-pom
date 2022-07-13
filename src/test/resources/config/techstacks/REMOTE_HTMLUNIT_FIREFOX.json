@@ -1,6 +1,6 @@
 {
   "platform": {
-    "seleniumServer": "local",
+    "serverName": "remote_htmlunit",
     "browserName": "firefox"
   }
 }

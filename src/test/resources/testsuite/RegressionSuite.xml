@@ -4,13 +4,13 @@
     <test name="chrome test">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="scripts.Facebook_Login"/>
+            <class name="testscripts.Facebook_Login"/>
         </classes>
     </test>
     <test name="firefox test">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="scripts.Facebook_Login"/>
+            <class name="testscripts.Facebook_Login"/>
         </classes>
     </test>
 </suite>

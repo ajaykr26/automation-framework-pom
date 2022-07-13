@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
+import sun.awt.image.ImageWatched;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -53,7 +54,7 @@ public class ExtentReporter {
     }
 
     public static void updateReport(String pageName, String methodName, Status status, String message) {
-        if (!DriverContext.getInstance().getTechStack().get("seleniumServer").startsWith("remote")) {
+        if (!DriverContext.getInstance().getTechStack().get("serverName").startsWith("remote")) {
             try {
                 String screenshotPath = takeScreenshot();
                 switch (status) {
@@ -123,10 +124,10 @@ public class ExtentReporter {
     public static String takeScreenshot() {
         String targetLocation = null;
 
-        if (!DriverContext.getInstance().getTechStack().get("seleniumServer").startsWith("remote")) {
+        if (!DriverContext.getInstance().getTechStack().get("serverName").startsWith("remote")) {
 
             String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-            String fileSeperator = System.getProperty("file.separator");
+            String fileSeparator = System.getProperty("file.separator");
             String screenShotName = timeStamp + ".png";
             try {
                 File file = new File(getScreenshotPath());
@@ -139,7 +140,7 @@ public class ExtentReporter {
 
                 }
                 File screenshotFile = ((TakesScreenshot) DriverFactory.getInstance().getDriver()).getScreenshotAs(OutputType.FILE);
-                targetLocation = file + fileSeperator + screenShotName;
+                targetLocation = file + fileSeparator + screenShotName;
                 File targetFile = new File(targetLocation);
                 FileHandler.copy(screenshotFile, targetFile);
             } catch (FileNotFoundException e) {
@@ -151,7 +152,5 @@ public class ExtentReporter {
 
         return targetLocation;
     }
-
-
 
 }

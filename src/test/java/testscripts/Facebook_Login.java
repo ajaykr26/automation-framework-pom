@@ -1,5 +1,6 @@
-package scripts;
+package testscripts;
 
+import library.reporting.ExtentReporter;
 import library.selenium.BaseTest;
 import library.selenium.PageFactory;
 import org.testng.annotations.Test;

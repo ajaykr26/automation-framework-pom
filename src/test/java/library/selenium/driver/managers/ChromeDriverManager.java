@@ -11,6 +11,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chromium.ChromiumDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 public class ChromeDriverManager extends DriverManager {
@@ -18,33 +20,33 @@ public class ChromeDriverManager extends DriverManager {
     protected Logger logger = LogManager.getLogger(this.getClass().getName());
 
     @Override
-    public void setDriver(){
+    public void setDriver() {
         PropertiesConfiguration propertiesConfiguration = Property.getProperties(Constants.RUNTIME_PROP_FILE);
 
-        if(Property.getVariable("cukes.webdrivermanager") != null && Property.getVariable("cukes.webdrivermanager").equalsIgnoreCase("true")){
-            if(Property.getVariable("cukes.chromedriver") != null){
-                WebDriverManager.chromedriver().version(Property.getVariable("cukes.chromedriver")).setup();
-            }else {
+        if (Property.getVariable("cukes.webdrivermanager") != null && Property.getVariable("cukes.webdrivermanager").equalsIgnoreCase("true")) {
+            if (Property.getVariable("cukes.chromedriver") != null) {
+                WebDriverManager.chromedriver().driverVersion(Property.getVariable("cukes.chromedriver")).setup();
+            } else {
                 WebDriverManager.chromedriver().setup();
 
             }
-        }else {
+        } else {
             System.setProperty("webdriver.chrome.driver", getDriverPath("chromedriver"));
         }
         System.setProperty("webdriver.chrome.silentOutput", "true");
         ChromeOptions chromeOptions = new ChromeOptions();
 
-        for(String option: propertiesConfiguration.getStringArray("options." + DriverContext.getInstance().getBrowserName().replaceAll("\\s", ""))){
+        for (String option : propertiesConfiguration.getStringArray("options." + DriverContext.getInstance().getBrowserName().replaceAll("\\s", ""))) {
             chromeOptions.addArguments(option);
         }
 
         if (propertiesConfiguration.getString("options.chrome.useAutomationExtension") != null &&
                 propertiesConfiguration.getString("options.chrome.useAutomationExtension").equalsIgnoreCase("false")) {
-                chromeOptions.setExperimentalOption("options.chrome.useAutomationExtension", false);
+            chromeOptions.setExperimentalOption("options.chrome.useAutomationExtension", false);
 
         }
 
-        if(DriverContext.getInstance().getBrowserName().contains("kiosk")){
+        if (DriverContext.getInstance().getBrowserName().contains("kiosk")) {
             chromeOptions.addArguments("--kiosk");
         }
         driver = new ChromeDriver(chromeOptions);

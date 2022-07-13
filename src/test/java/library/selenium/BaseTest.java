@@ -4,10 +4,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import library.common.*;
 import library.reporting.ExtentManager;
-import library.reporting.ExtentReporter;
 import library.selenium.driver.factory.DriverContext;
 import library.selenium.driver.factory.DriverFactory;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
@@ -16,7 +14,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import javax.mail.MessagingException;
-import javax.swing.text.StyledEditorKit;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
@@ -43,21 +40,19 @@ public class BaseTest {
 
 
     private Map<String, String> getTechStack() {
-        Map<String, String> techStack = new HashMap<>();
+        Map<String, String> techstack = new HashMap<>();
 
-        if (Property.getVariable("techStack") != null) {
-            techStack = FileHelper.getJSONObjectToMap(Constants.JSON_STACKS_FILE, "platform");
-            if (techStack.isEmpty()) {
-                logger.warn("Tech stack JSON file not found: {}. defaulting to local chrome driver instance.", Constants.JSON_STACKS_FILE);
-                techStack.put("seleniumServer", "local");
-                techStack.put("browserName", "chrome");
+        if (Property.getVariable("techstack") != null) {
+            techstack = FileHelper.getJSONObjectToMap(Constants.JSON_STACKS_FILE, "platform");
+            if (techstack.isEmpty()) {
+                techstack.put("serverName", "local");
+                techstack.put("browserName", "chrome");
             }
         } else {
-            logger.info("techStack is not defined in vm arguments. getting the configuration from runtime.properties file");
-            techStack.put("seleniumServer", Property.getProperty(Constants.RUNTIME_PROP_FILE, "seleniumServer").toLowerCase());
-            techStack.put("browserName", Property.getProperty(Constants.RUNTIME_PROP_FILE, "browserName").toLowerCase());
+            techstack.put("serverName", Property.getProperty(Constants.RUNTIME_PROP_FILE, "serverName").toLowerCase());
+            techstack.put("browserName", Property.getProperty(Constants.RUNTIME_PROP_FILE, "browserName").toLowerCase());
         }
-        return techStack;
+        return techstack;
 
     }
 
@@ -67,9 +62,10 @@ public class BaseTest {
         String testsuite = getClass().getSimpleName();
         TestContext.getInstance().testdataPut("testsuite", testsuite);
         dataFile = Constants.TESTDATA_PATH + testsuite + ".json";
-        String propFile = Constants.RUNTIME_PROP_FILE;
         reportPath = System.getProperty("user.dir") + "/reports/" + testsuite + "/" + timeStamp;
         extentReports = ExtentManager.getReporter(reportPath + "/html-report");
+        Property.setRuntimeProperties();
+        DriverContext.getInstance().setDriverContext(getTechStack());
     }
 
     @BeforeMethod
@@ -80,16 +76,7 @@ public class BaseTest {
         ExtentManager.startTest(test.testName(), test.description());
         setDataDictionary(test.testName());
         setPropDataDictionary();
-        Property.setRuntimeProperties();
-        DriverContext.getInstance().setDriverContext(getTechStack());
         DriverFactory.getInstance().getDriver();
-
-    }
-
-    public void createDriver(String browser) {
-        DriverContext.getInstance().setDriverContext(getTechStack());
-        DriverFactory.getInstance().getDriver();
-
     }
 
     @AfterMethod
@@ -102,7 +89,6 @@ public class BaseTest {
             ExtentManager.getTest().log(Status.PASS, "Test passed");
         }
         DriverFactory.getInstance().quit();
-
         try {
             Screenshot.insertImageToWord(Boolean.parseBoolean(TestContext.getInstance().propDataGet("addScreenshotToWord").toString()));
         } catch (IOException | InvalidFormatException e) {

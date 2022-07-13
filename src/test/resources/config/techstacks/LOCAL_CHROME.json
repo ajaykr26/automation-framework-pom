@@ -1,6 +1,6 @@
 {
   "platform": {
-    "seleniumServer": "local",
+    "serverName": "local",
     "browserName": "chrome"
   }
 

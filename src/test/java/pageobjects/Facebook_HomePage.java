@@ -18,12 +18,12 @@ public class Facebook_HomePage extends BasePO {
     public void verifyPageTitle(String pageTitle) {
         pageTitle = parseText(pageTitle);
         Assert.assertEquals(getDriver().getTitle(), pageTitle);
-        ExtentReporter.addStepLog(Status.PASS, "page title verified successfully");
-//        if (pageTitle.equals(getDriver().getTitle())) {
-//            ExtentReporter.addStepLog(Status.PASS, "page title verified successfully");
-//        } else {
-//            ExtentReporter.addStepLog(Status.FAIL, "page title not matched successfully");
-//        }
+//        ExtentReporter.addStepLog(Status.PASS, "page title verified successfully");
+        if (pageTitle.equals(getDriver().getTitle())) {
+            ExtentReporter.addStepLog(Status.PASS, "page title verified successfully");
+        } else {
+            ExtentReporter.addStepLog(Status.FAIL, "page title not matched successfully");
+        }
 
     }
 

@@ -79,7 +79,7 @@ public class Property {
     public static void setRuntimeProperties() {
         PropertiesConfiguration props = Property.getProperties(Constants.RUNTIME_PROP_FILE);
         String environment = props.getString("environment");
-        String seleniumServer = props.getString("seleniumServer");
+        String serverName = props.getString("serverName");
         String browserName = props.getString("browserName");
         String defaultWait = props.getString("defaultWait");
         String sendEmail = props.getString("sendEmail");
@@ -91,8 +91,8 @@ public class Property {
             System.setProperty("fw.environment", environment);
         }
 
-        if (seleniumServer != null) {
-            System.setProperty("fw.seleniumServer", seleniumServer);
+        if (serverName != null) {
+            System.setProperty("fw.serverName", serverName);
         }
 
         if (browserName != null) {

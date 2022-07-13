@@ -45,7 +45,7 @@ public class DriverFactory {
     }
 
     private DriverManager setDriverManager() {
-        Server server = Server.valueOf(DriverContext.getInstance().getTechStack().get("seleniumServer").toLowerCase());
+        Server server = Server.valueOf(DriverContext.getInstance().getTechStack().get("serverName").toLowerCase());
         Browser browser = Browser.valueOf(DriverContext.getInstance().getBrowserName().toLowerCase());
         switch (server) {
             case remote_htmlunit:
@@ -62,10 +62,7 @@ public class DriverFactory {
                     case firefox:
                         driverManager.set(new FirefoxDriverManager());
                         break;
-                    case iexplorer:
-                        driverManager.set(new IEDriverManager());
-                        break;
-                    case edge:
+                    case msedge:
                         driverManager.set(new EdgeDriverManager());
                         break;
                 }
@@ -84,7 +81,7 @@ public class DriverFactory {
     }
 
     public enum Browser {
-        chrome, iexplorer, edge, safari, firefox;
+        chrome, iexplorer, msedge, safari, firefox;
     }
 
 
