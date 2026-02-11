@@ -15,7 +15,7 @@
         <webdrivermanager>2.2.1</webdrivermanager>
         <asot>1.5.2</asot>
         <avent-extentreports>4.1.3</avent-extentreports>
-        <asserj-core>3.14.0</asserj-core>
+        <asserj-core>3.27.7</asserj-core>
         <axe.selenium>3.0</axe.selenium>
         <apache-poi>4.1.1</apache-poi>
         <aspectj>1.8.10</aspectj>
